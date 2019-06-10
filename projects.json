@@ -1,0 +1,45 @@
+{
+    "Open edX": {
+        "git": [ 
+        	"https://github.com/edx/edx-platform",
+        	"https://github.com/edx/course-discovery",
+        	"https://github.com/edx/credentials",
+        	"https://github.com/edx/cs_comments_service",
+        	"https://github.com/edx/ecommerce",
+        	"https://github.com/edx/gradebook",
+        	"https://github.com/edx/registrar"
+        ],
+	"github": [
+		"https://github.com/edx/edx-platform",
+		"https://github.com/edx/course-discovery",
+        	"https://github.com/edx/credentials",
+        	"https://github.com/edx/cs_comments_service",
+        	"https://github.com/edx/ecommerce",
+        	"https://github.com/edx/gradebook",
+        	"https://github.com/edx/registrar"
+	],
+	"slack": [ 
+		"C02SNA1U4", 
+		"CFSA1T268", 
+		"C0F4KLB5Z", 
+		"C0RU5BTCP", 
+		"C4913NQCE", 
+		"C12M8M5AR", 
+		"C0EFVC6RK",
+		"C1LM7G955",
+		"C0WL6SPRA",
+		"C1K0A7BFD",
+		"C0EUBSV7D",
+		"C1KHYD4LT",
+		"C0F0NA2F5", 
+		"C0RKFAQEA", 
+		"C08B4LZEZ", 
+		"C0G15M90X", 
+		"C0GF6FTHA", 
+		"CA0DFM0FP", 
+		"CC4GBRA4X", 
+		"CDAG4KN2C", 
+		"C02SNA1U4"
+	]
+	}
+}
