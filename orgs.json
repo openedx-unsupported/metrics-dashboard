@@ -1,0 +1,551 @@
+{
+	"blacklist": [],
+	"organizations": {
+		"edX, Inc.": [
+			{
+				"domain": "edx.com",
+				"is_top": true
+			},
+			{
+				"domain": "edx.org",
+				"is_top": true
+			},
+			{
+				"domain": "discovery.devstack.edx",
+				"is_top": true
+			}
+		],
+		"Stanford University": [
+			{
+				"domain": "cs.stanford.edu",
+				"is_top": true
+			},
+			{
+				"domain": "stanford.edu",
+				"is_top": true
+			}
+		],
+		"Google, Inc.": [
+			{
+				"domain": "google.com",
+				"is_top": true
+			}
+		],
+		"Harvard University": [
+			{
+				"domain": "harvard.edu",
+				"is_top": true
+			},
+			{
+				"domain": "seas.harvard.edu",
+				"is_top": true
+			},
+			{
+				"domain": "fas.harvard.edu",
+				"is_top": true
+			},
+			{
+				"domain": "cs.harvard.edu",
+				"is_top": true
+			}
+		],
+		"Massachusetts Institute of Technology": [
+			{
+				"domain": "dhcp-18-189-72-163.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-111-87-126.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-57-202.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-111-53-15.dyn.MIT.EDU", 
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-110-80.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "mitx.mit.edu",
+				"is_top": true
+			},
+			{
+				"domain": "dhcp-18-189-42-27.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-69-114.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-85-242.dyn.mit.edu ",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-111-127-54.dyn.MIT.EDU ",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-50-120.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-66-166.dyn.mit.edu ",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-116-172.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-65-229.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-82-79.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-44-246.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-111-34-237.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-44-65.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-88-51.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-105-26.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "ne35-seven-twenty.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-89-131.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-29-247.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-22-145.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "vpn-18-101-8-68.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-24-73.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-26-245.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-80-158.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-111-94-86.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-111-88-191.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-107-246.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-119-168.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-70-48.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "csail.mit.edu",
+				"is_top": true
+			},
+			{
+				"domain": "jm-csail.(none)",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-111-4-220.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "ne35-four-sixty.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-21-198.dyn.mit.edu",
+				"is_top": false
+			},
+			{
+				"domain": "mit.edu",
+				"is_top": true
+			},
+			{
+				"domain": "dhcp-18-189-125-206.dyn.MIT.EDU",
+				"is_top": false
+			},
+			{
+				"domain": "dhcp-18-189-69-227.dyn.MIT.EDU",
+				"is_top": false
+			}
+		],
+		"University of California Berkeley": [
+			{
+				"domain": "cs.berkeley.edu",
+				"is_top": true
+			},
+			{
+				"domain": "berkeley.edu",
+				"is_top": true
+			},
+			{
+				"domain": "eecs.berkeley.edu",
+				"is_top": true
+			}
+		],
+		"Arbisoft": [
+			{
+				"domain": "Arbisofts-MacBook-Pro-2.local",
+				"is_top": false
+			},
+			{
+				"domain": "A006-00063.arbisoft.com",
+				"is_top": false
+			},
+			{
+				"domain": "UzairRasheed-MBP-97.arbisoft.com",
+				"is_top": false
+			},
+			{
+				"domain": "A003-00183.arbisoft.com",
+				"is_top": false
+			},
+			{
+				"domain": "usama.arbisoft.com",
+				"is_top": false
+			},
+			{
+				"domain": "arbisoft.com",
+				"is_top": true
+			},
+			{
+				"domain": "A00702-Zainab-Amir.arbisoft.com",
+				"is_top": false
+			},
+			{
+				"domain": "Arbisofts-MacBook-Air-2.local",
+				"is_top": false
+			}
+		],
+		"IONIS Education Group": [
+			{
+				"domain": "ionisx.com",
+				"is_top": true
+			},
+			{
+				"domain": "ionis-group.com",
+				"is_top": true
+			}
+		],
+		"University of British Columbia": [
+			{
+				"domain": "ubc.ca",
+				"is_top": true
+			}
+		],
+		"eduNEXT": [
+			{
+				"domain": "edunext.co",
+				"is_top": false
+			}
+		],
+		"Proversity": [
+			{
+				"domain": "proversity.org",
+				"is_top": true
+			}
+		],
+		"University of Queensland": [
+			{
+				"domain": "uq.edu.au",
+				"is_top": true
+			}
+		],
+		"Swarthmore College": [
+			{
+				"domain": "swarthmore.edu",
+				"is_top": true
+			}
+		],
+		"Github": [
+			{
+				"domain": "github.com",
+				"is_top": false
+			}
+		],
+		"Portabase": [
+			{
+				"domain": "portabase.org",
+				"is_top": false
+			}
+		],
+		"Artistanbul": [
+			{
+				"domain": "aristanbul.io",
+				"is_top": false
+			}
+		],
+		"Drupal": [
+			{
+				"domain": "241652.no-reply.drupal.org",
+				"is_top": false
+			}
+		],
+		"Autistici": [
+			{
+				"domain": "autistici.org",
+				"is_top": false
+			}
+		],
+		"Datadog": [
+			{
+				"domain": "datadoghq.com",
+				"is_top": false
+			}
+		],
+		"Wellesley College": [
+			{
+				"domain": "wellesley.edu",
+				"is_top": false
+			}
+		],
+		"SFT Technologies": [
+			{
+				"domain": "sft.mx",
+				"is_top": false
+			}
+		],
+		"Raccoon Gang": [
+			{
+				"domain": "raccoongang.com",
+				"is_top": false
+			}
+		],
+		"VMware": [
+			{
+				"domain": "vmware.com",
+				"is_top": false
+			}
+		],
+		"University of North Carolina": [
+			{
+				"domain": "cs.unc.edu",
+				"is_top": false
+			}
+		],
+		"BNOTIONS": [
+			{
+				"domain": "bnotions.com",
+				"is_top": false
+			}
+		],
+		"Gospel for Asia": [
+			{
+				"domain": "gfa.org",
+				"is_top": false
+			}
+		],
+		"Columbia University": [
+			{
+				"domain": "columbia.edu",
+				"is_top": false
+			}
+		],
+		"WPI": [
+			{
+				"domain": "wpi.edu",
+				"is_top": false
+			}
+		],
+		"Super Dimension Fortress": [
+			{
+				"domain": "sdf.org",
+				"is_top": false
+			}
+		],
+		"Universidad Complutense de Madrid": [
+			{
+				"domain": "fdi.ucm.es",
+				"is_top": false
+			}
+		],
+		"Cornell University": [
+			{
+				"domain": "cornell.edu",
+				"is_top": false
+			}
+		],
+		"Abakas": [
+			{
+				"domain": "abakas.com",
+				"is_top": false
+			}
+		],
+		"University of Illinois Urbana-Champaign": [
+			{
+				"domain": "illinois.edu",
+				"is_top": false
+			}
+		],
+		"City Network": [
+			{
+				"domain": "hastexo.com",
+				"is_top": false
+			}
+		],
+		"Northeastern University": [
+			{
+				"domain": "husky.neu.edu",
+				"is_top": true
+			}
+		],
+		"Extension Engine": [
+			{
+				"domain": "extensionengine.com",
+				"is_top": false
+			}
+		],
+		"Telecom Italia": [
+			{
+				"domain": "tin.it",
+				"is_top": false
+			}
+		],
+		"Tencent QQ": [
+			{
+				"domain": "qq.com",
+				"is_top": false
+			}
+		],
+		"Brown University": [
+			{
+				"domain": "brown.edu",
+				"is_top": false
+			}
+		],
+		"Aquent": [
+			{
+				"domain": "aquent.com",
+				"is_top": false
+			}
+		],
+		"University of the Basque Country": [
+			{
+				"domain": "ehu.es",
+				"is_top": false
+			},
+			{
+				"domain": "ehu.eus",
+				"is_top": false
+			}
+		],
+		"FUN-MOOC": [
+			{
+				"domain": "fun-mooc.fr",
+				"is_top": false
+			}
+		],
+		"Bitname": [
+			{
+				"domain": "bitname.com",
+				"is_top": false
+			}
+		],
+		"School Yourself": [
+			{
+				"domain": "schoolyourself.org",
+				"is_top": false
+			}
+		],
+		"Apprentice.io": [
+			{
+				"domain": "apprentice.io",
+				"is_top": false
+			}
+		],
+		"Oberlin College": [
+			{
+				"domain": "oberlin.edu",
+				"is_top": false
+			}
+		],
+		"Renovate": [
+			{
+				"domain": "renovateapp.com",
+				"is_top": false
+			}
+		],
+		"TELTEK": [
+			{
+				"domain": "teltek.es",
+				"is_top": false
+			}
+		],
+		"ejudge": [
+			{
+				"domain": "agava-8761.ejudge.ru",
+				"is_top": false
+			}
+		],
+		"The Polytechnic University of Milano": [
+			{
+				"domain": "polimi.it",
+				"is_top": false
+			}
+		],
+		"OpenCraft": [
+			{
+				"domain": "opencraft.com",
+				"is_top": false
+			}
+		],
+		"Beijing Information Science and Technology University": [
+			{
+				"domain": "mail.bistu.edu.cn",
+				"is_top": false
+			}
+		],
+		"Inria": [
+			{
+				"domain": "inria.fr",
+				"is_top": false
+			}
+		]
+	}
+}    
