@@ -14,7 +14,7 @@ docker run -p 127.0.0.1:9200:9200 -p 127.0.0.1:5601:5601 \
     -v $(pwd)/infra.cfg:/infra.cfg \
     -t grimoirelab/full
 ```
-[GrimoireLab Documentation] (https://github.com/chaoss/grimoirelab/tree/master/docker)
+[GrimoireLab Documentation](https://github.com/chaoss/grimoirelab/tree/master/docker)
 
 ## File Notes
 Notes on volumes
