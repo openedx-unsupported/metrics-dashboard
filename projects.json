@@ -1,6 +1,6 @@
 {
     "Open edX": {
-        "git": [ 
+	    "git": [ 
         	"https://github.com/edx/edx-platform",
         	"https://github.com/edx/course-discovery",
         	"https://github.com/edx/credentials",
@@ -8,8 +8,8 @@
         	"https://github.com/edx/ecommerce",
         	"https://github.com/edx/gradebook",
         	"https://github.com/edx/registrar"
-        ],
-	"github": [
+	    ],
+	    "github": [
 		"https://github.com/edx/edx-platform",
 		"https://github.com/edx/course-discovery",
         	"https://github.com/edx/credentials",
@@ -17,8 +17,8 @@
         	"https://github.com/edx/ecommerce",
         	"https://github.com/edx/gradebook",
         	"https://github.com/edx/registrar"
-	],
-	"slack": [ 
+	    ],
+	    "slack": [ 
 		"C02SNA1U4", 
 		"CFSA1T268", 
 		"C0F4KLB5Z", 
@@ -40,6 +40,6 @@
 		"CC4GBRA4X", 
 		"CDAG4KN2C", 
 		"C02SNA1U4"
-	]
+	    ]
 	}
 }

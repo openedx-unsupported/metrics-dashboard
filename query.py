@@ -1,4 +1,11 @@
+"""
+Gathers all author domains from the index in elasticsearch that stores information from 7 edX repositories
+"""
+
 import elasticsearch
+
+def reverse(word):
+    return word[::-1]
 
 # ElasticSearch instance (url)
 es = elasticsearch.Elasticsearch(['http://localhost:9200/'])
@@ -7,7 +14,6 @@ es = elasticsearch.Elasticsearch(['http://localhost:9200/'])
 page = es.search(
     index = 'git_grimoirelab',
     scroll = '2m',
-
     search_type = 'query_then_fetch',
     size = 10000)
 
@@ -26,10 +32,13 @@ while (scroll_size > 0):
     scroll_size = len(page['hits']['hits'])
     print("scroll size: " + str(scroll_size))
     for elt in page['hits']['hits']:
-        #print ("domain: %s \n" % elt['_source']['author_domain'])
-        domain_output.add(elt['_source']['author_domain'])
+        #print ("domain: %s \n" % elt)
+        domain_output.add(reverse(str(elt['_source']['author_domain']))) #reverse so that you can sort by the ending of a domain
 
-for elt in domain_output:
-    print("%s \n" % elt)
+sorted_output = sorted(domain_output)
 
-print(len(domain_output))
+for index, elt in enumerate(sorted_output): #revert back to original string, but keep sorted order
+    sorted_output[index] = reverse(elt)
+
+for elt in sorted_output:
+    print("%s\n" % elt)
