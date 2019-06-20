@@ -1,0 +1,11 @@
+{
+    "Open edX": {
+	    "git": [ 
+        	"edx"
+	    ],
+	    "github": [
+	    ],
+	    "slack": [ 
+	    ]
+    }
+}
