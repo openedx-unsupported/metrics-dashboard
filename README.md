@@ -2,7 +2,7 @@
 Dashboard for Open edX intended to run in a docker container by Grimoirelabs.
 
 ## How to Use
-In order to run, use this command:
+In order to run locally, use this command:
 
 ```
 docker run -p 127.0.0.1:9200:9200 -p 127.0.0.1:5601:5601 \
@@ -40,3 +40,12 @@ Contains information (urls, id's) about information being gathered from named so
 
 ### infra.cfg
 Contains information regarding data collection
+
+## Notes on scripts
+
+### Saving changes to dashboards locally
+If you would like to save changes to dashboards locally, or import local dashboards to kibana, use manage_dashboards.py.
+If you run the program from the terminal, it expects to have 1 argument, either "import" or "export" to specify what action it should take. It will look for a folder called "dashboards" located in the same directory.
+
+### Getting all repos from an organization, or all channels from a Slack workspace
+You may find it easier to specify one organization for a grimoirelabs project, rather than specifying each individual repo. If this is the case create_dashboard.py will make that process easier. This script will look for a file called og_projects.json, and use the information in that file to overwrite projects.json. 
