@@ -11,14 +11,19 @@ def get_tokens():
 	slack = os.environ['SLACK_KEY']
 	db_user = os.environ['DB_USER']
 	db_pass = os.environ['DB_PASS']
+	db_host = os.environ['DB_HOST']
+	db_name = os.environ['DB_NAME']
 	elastic_url = os.environ['ELASTIC_URL']
 	kibana_url = os.environ['KIBANA_URL']
+
 
 	return {
 			"github": github, 
 			"slack": slack,
 			"db_user": db_user,
 			"db_pass": db_pass,
+			"db_host": db_host,
+			"db_name": db_name,
 			"elastic_url": elastic_url,
 			"kibana_url": kibana_url
 			}
@@ -32,6 +37,8 @@ def write_config(tokens):
 	infra_config.set('sortinghat', 'user', tokens['db_user'])
 	infra_config.set('sortinghat', 'password', tokens['db_pass'])
 	infra_config.set('panels', 'kibiter_url', tokens['kibana_url'])
+	infra_config.set('sortinghat', 'database', tokens['db_name'])
+	infra_config.set('sortinghat', 'host', tokens['db_host'])
 
 	with open('infra.cfg', 'w') as configfile:
 		infra_config.write(configfile)
