@@ -42,7 +42,7 @@ def get_config(filename):
 	Reads the configuration file that contains the github and slack api token.
 	Returns a dictionary that represents the config file.
 	'''
-	if os.path.exists(writefile):
+	if os.path.exists(filename):
 		config = configparser.ConfigParser()
 		config.read(filename)
 		return config
