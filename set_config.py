@@ -7,6 +7,7 @@ import os
 import configparser
 
 def get_tokens():
+	print(os.environ)
 	github = os.environ['GITHUB_KEY']
 	slack = os.environ['SLACK_KEY']
 	db_user = os.environ['DB_USER']
