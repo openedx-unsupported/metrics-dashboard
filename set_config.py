@@ -5,17 +5,18 @@ and then write those to a config file.
 
 import os
 import configparser
+import sys
 
-def get_tokens():
-	print(os.environ)
-	github = os.environ['GITHUB_KEY']
-	slack = os.environ['SLACK_KEY']
-	db_user = os.environ['DB_USER']
-	db_pass = os.environ['DB_PASS']
-	db_host = os.environ['DB_HOST']
-	db_name = os.environ['DB_NAME']
-	elastic_url = os.environ['ELASTIC_URL']
-	kibana_url = os.environ['KIBANA_URL']
+def get_tokens(argv):
+	print(argv)
+	github = argv[1] #os.environ['GITHUB_KEY']
+	slack = argv[2] #os.environ['SLACK_KEY']
+	db_user = argv[3] #os.environ['DB_USER']
+	db_pass = argv[4] #os.environ['DB_PASS']
+	db_host = argv[5] #os.environ['DB_HOST']
+	db_name = argv[6] #os.environ['DB_NAME']
+	elastic_url = argv[7] #os.environ['ELASTIC_URL']
+	kibana_url = argv[8] #os.environ['KIBANA_URL']
 
 
 	return {
@@ -55,5 +56,5 @@ def write_config(tokens):
 		token_config.write(configfile)
 
 if __name__ == '__main__':
-	tokens = get_tokens()
+	tokens = get_tokens(sys.argv)
 	write_config(tokens)
