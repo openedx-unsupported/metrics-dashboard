@@ -13,10 +13,12 @@ RUN git clone https://github.com/openedx/metrics-dashboard.git ../../metrics-das
 #RUN rm ../../identities.yaml
 RUN rm ../../infra.cfg
 RUN rm ../../dashboard.cfg
+RUN rm ../../aliases.json
 
 # copy our files to correct location
 
 RUN cp /metrics-dashboard/infra.cfg ../..
+RUN cp /metrics-dashboard/aliases.json ../..
 RUN cp /metrics-dashboard/dashboard.cfg ../..
 #RUN cp /metrics-dashboard/identities.yaml ../..
 RUN cp /metrics-dashboard/og_projects.json ../..
