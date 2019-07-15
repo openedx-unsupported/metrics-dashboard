@@ -17,6 +17,7 @@ def create_projects(projects, config):
             git_repos = get_git_repos(git_organization, git_token)
             projects[key]['git'] = git_repos
             projects[key]['github'] = git_repos
+            projects[key]['github:repos'] = git_repos
         if 'slack' in projects[key] and projects[key]['slack'] == []:
             projects[key]['slack'] = get_slack_channels(slack_token)
     return projects
@@ -51,6 +52,7 @@ if __name__ == '__main__':
         "Open edX": {
             "git": [ "edx"],
             "github": [],
+            "github:repos": [],
             "slack": []
         }
     }
@@ -58,7 +60,9 @@ if __name__ == '__main__':
         'github' : {'api-token' : 'XXX'}, #use correct tokens here
         'slack' : {'api-token' : 'XXX'}
     }
+
     create_projects(projects1, config1)
+
     if len(projects1['Open edX']['slack']) == 154 and len(projects1['Open edX']['github']) == 224:
         print('Test 1 Passed: Filling in projects for Git and Slack')
     else:
@@ -78,6 +82,7 @@ if __name__ == '__main__':
         "Open edX": {
             "git": [ 'https://github.com/edx/publisher-frontend'],
             "github": ['https://github.com/edx/publisher-frontend'],
+            "github:repos": ['https://github.com/edx/publisher-frontend'],
             "slack": []
         }
     }
@@ -102,11 +107,13 @@ if __name__ == '__main__':
         "Open edX": {
             "git": [ 'https://github.com/edx/publisher-frontend'],
             "github": ['https://github.com/edx/publisher-frontend'],
+            "github:repos": ['https://github.com/edx/publisher-frontend'],
             "slack": []
         },
         "Test": {
             "git": ['openedx'],
             "github": [],
+            "github:repos": [],
             "slack": ['test']
         }
     }
