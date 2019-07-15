@@ -17,7 +17,7 @@ def create_projects(projects, config):
             git_repos = get_git_repos(git_organization, git_token)
             projects[key]['git'] = git_repos
             projects[key]['github'] = git_repos
-            projects[key]['github:repos'] = git_repos
+            projects[key]['github:repo'] = git_repos
         if 'slack' in projects[key] and projects[key]['slack'] == []:
             projects[key]['slack'] = get_slack_channels(slack_token)
     return projects
