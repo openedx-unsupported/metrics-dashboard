@@ -5,8 +5,8 @@ sudo /usr/bin/python3 /set_config.py $GITHUB_KEY $SLACK_KEY $DB_USER $DB_PASS $D
 sudo /usr/bin/python3 /create_dashboard.py -r /og_projects.json -wr /projects.json -cf /override.cfg
 
 sudo git clone https://alangsto:$GITHUB_KEY@github.com/edx/repo-tools-data.git
-cp repo-tools-data/people.yaml .
-rm -rf repo-tools-data
+sudo cp repo-tools-data/people.yaml .
+sudo rm -rf repo-tools-data
 sudo /usr/bin/python3 /create_identities.py
 
 /usr/local/bin/sirmordred $*
