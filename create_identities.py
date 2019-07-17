@@ -33,7 +33,7 @@ with open("people.yaml", 'r') as stream:
 
         	data.append(entry)
         
-        with open('identities.yml', 'w') as outfile:
+        with open('identities.yaml', 'w') as outfile:
         	yaml.dump(data, outfile, default_flow_style=False)
         	
     except yaml.YAMLError as exc:
