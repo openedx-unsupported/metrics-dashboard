@@ -27,7 +27,8 @@ def get_git_repos(org, token):
     repos = gh.get_organization(org).get_repos('public')
     repo_list = []
     for repo in repos:
-        repo_list.append(repo.html_url)
+        if not repo.fork:
+            repo_list.append(repo.html_url)
     return repo_list
 
 def get_slack_channels(token):
