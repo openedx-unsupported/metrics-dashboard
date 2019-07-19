@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 def get_organization(info):
     if info['agreement'] == 'individual':
         return 'individual'
-    else:
+    elif info['agreement'] == 'institution':
         return info['institution']
 
 with open('people.yaml', 'r') as stream:
