@@ -8,6 +8,7 @@ sudo /usr/bin/python3 /create_dashboard.py -r /og_projects.json -wr /projects.js
 sleep 5
 
 echo "Loading identities . . . "
+sleep 1
 sudo git clone https://alangsto:$GITHUB_KEY@github.com/edx/repo-tools-data.git
 sudo cp repo-tools-data/people.yaml .
 sudo rm -rf repo-tools-data
