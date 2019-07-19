@@ -15,7 +15,7 @@ def export_dash():
     Filenames will be configured based on dashboard titles.
     '''
     try:
-        dashboards = search_dashboards('http://localhost:9200', '.kibana')
+        dashboards = search_dashboards(os.environ['ELASTIC_URL'], '.kibana')
 
         for dash in dashboards:
             id = dash['_id'].split(':')[1] #get dashboard id
@@ -23,11 +23,14 @@ def export_dash():
             file_path = 'dashboards/' + json_name
             if re.match(r'[-\w_]+\.json',json_name): #check to make sure file being removed has a valid name
                 print('valid file')
-                os.remove(file_path)
+                try:
+                    os.remove(file_path)
+                except (FileNotFoundError):
+                    continue
             else:
                 raise Exception('Not a file path')
             export_dashboard( #export using kidash API
-                'http://localhost:9200', #elastic_url
+                os.environ['ELASTIC_URL'], #elastic_url
                 id, #dashboard id
                 file_path, #export_file
                 '.kibana',
@@ -45,8 +48,8 @@ def import_dash():
         for file in os.listdir('dashboards'):
             if file.endswith((".json")):
                     import_dashboard(
-                        'http://127.0.0.1:9200', #elastic_url
-                        'http://localhost:5601', #kibana_url
+                        os.environ['ELASTIC_URL'], #elastic_url
+                        os.environ['KIBANA_URL'], #kibana_url
                         ('dashboards/%s' % file) #import_file
                         )
     except (KeyError):
