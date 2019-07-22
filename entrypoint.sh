@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Starting . . . "
 cd /
 echo "Configuring credentials . . ."
 sudo /usr/bin/python3 /set_config.py $GITHUB_KEY $SLACK_KEY $DB_USER $DB_PASS $DB_HOST $DB_NAME $ELASTIC_URL $KIBANA_URL
