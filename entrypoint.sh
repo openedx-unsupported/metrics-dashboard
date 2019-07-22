@@ -17,4 +17,4 @@ sudo /usr/bin/python3 /create_identities.py
 
 sleep 5
 
-/usr/local/bin/sirmordred $*
+/usr/local/bin/sirmordred -c /infra.cfg /dashboard.cfg /project.cfg /override.cfg
