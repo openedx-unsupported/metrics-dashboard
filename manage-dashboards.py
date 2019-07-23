@@ -22,13 +22,13 @@ def export_dash():
             json_name = dash['title'].replace(' ', '-') + "-dashboard.json" #create filename for dashboard
             file_path = 'dashboards/' + json_name
             if re.match(r'[-\w_]+\.json',json_name): #check to make sure file being removed has a valid name
-                print('valid file')
+                print('updating existing dashboard')
                 try:
                     os.remove(file_path)
                 except (FileNotFoundError):
-                    continue
+                    print('saving new dashboard')
             else:
-                raise Exception('Not a file path')
+                raise Exception('Not a valid file path')
             export_dashboard( #export using kidash API
                 os.environ['ELASTIC_URL'], #elastic_url
                 id, #dashboard id

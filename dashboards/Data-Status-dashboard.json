@@ -5,16 +5,16 @@
             "description": "Data Status panel by Bitergia",
             "hits": 0,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"query\": {\"language\": \"lucene\", \"query\": {\"query_string\": {\"query\": \"*\", \"analyze_wildcard\": true, \"default_field\": \"*\"}}}, \"highlightAll\": true, \"filter\": [], \"version\": true}"
+                "searchSourceJSON": "{\"version\": true, \"query\": {\"query\": {\"query_string\": {\"query\": \"*\", \"analyze_wildcard\": true, \"default_field\": \"*\"}}, \"language\": \"lucene\"}, \"filter\": [], \"highlightAll\": true}"
             },
             "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true}",
-            "panelsJSON": "[{\"title\": \"Git\", \"type\": \"visualization\", \"id\": \"git_data_status_numbers\", \"panelIndex\": \"4\", \"gridData\": {\"h\": 2, \"w\": 12, \"y\": 0, \"x\": 0, \"i\": \"4\"}, \"version\": \"6.1.0-3\"}, {\"title\": \"Github\", \"type\": \"visualization\", \"id\": \"github_issues_data_status_numbers\", \"panelIndex\": \"5\", \"gridData\": {\"h\": 2, \"w\": 12, \"y\": 4, \"x\": 0, \"i\": \"5\"}, \"version\": \"6.1.0-3\"}, {\"title\": \"Slack\", \"type\": \"visualization\", \"id\": \"slack_data_status_numbers\", \"panelIndex\": \"28\", \"gridData\": {\"h\": 2, \"w\": 12, \"y\": 14, \"x\": 0, \"i\": \"28\"}, \"version\": \"6.1.0-3\"}]",
+            "panelsJSON": "[{\"id\": \"git_data_status_numbers\", \"type\": \"visualization\", \"title\": \"Git\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"4\", \"y\": 0, \"w\": 12, \"h\": 2, \"x\": 0}, \"panelIndex\": \"4\"}, {\"id\": \"github_issues_data_status_numbers\", \"type\": \"visualization\", \"title\": \"Github\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"5\", \"y\": 4, \"w\": 12, \"h\": 2, \"x\": 0}, \"panelIndex\": \"5\"}, {\"id\": \"slack_data_status_numbers\", \"type\": \"visualization\", \"title\": \"Slack\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"28\", \"y\": 14, \"w\": 12, \"h\": 2, \"x\": 0}, \"panelIndex\": \"28\"}]",
             "refreshInterval": {
                 "display": "Off",
                 "pause": false,
                 "value": 0
             },
-            "release_date": "2019-06-12T16:34:34.526920",
+            "release_date": "2019-07-23T15:26:59.365781",
             "timeFrom": "now-10y",
             "timeRestore": true,
             "timeTo": "now",

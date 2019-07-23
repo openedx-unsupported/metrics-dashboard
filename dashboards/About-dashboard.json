@@ -5,11 +5,11 @@
             "description": "About panel by Bitergia",
             "hits": 0,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"version\": true, \"highlightAll\": true, \"filter\": [], \"query\": {\"language\": \"lucene\", \"query\": {\"query_string\": {\"analyze_wildcard\": true, \"query\": \"*\"}}}}"
+                "searchSourceJSON": "{\"query\": {\"query\": {\"query_string\": {\"query\": \"*\", \"analyze_wildcard\": true}}, \"language\": \"lucene\"}, \"version\": true, \"filter\": [], \"highlightAll\": true}"
             },
             "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true}",
-            "panelsJSON": "[{\"title\": \"About\", \"type\": \"visualization\", \"gridData\": {\"h\": 5, \"x\": 6, \"y\": 0, \"w\": 6, \"i\": \"1\"}, \"panelIndex\": \"1\", \"id\": \"Help-About\", \"version\": \"6.1.0-1\"}, {\"title\": \"Acknowledgments\", \"type\": \"visualization\", \"gridData\": {\"h\": 3, \"x\": 6, \"y\": 5, \"w\": 6, \"i\": \"2\"}, \"panelIndex\": \"2\", \"id\": \"Help-Acknowledgments\", \"version\": \"6.1.0-1\"}, {\"title\": \"User Interface\", \"type\": \"visualization\", \"gridData\": {\"h\": 8, \"x\": 0, \"y\": 0, \"w\": 6, \"i\": \"4\"}, \"panelIndex\": \"4\", \"id\": \"Help-UI\", \"version\": \"6.1.0-1\"}]",
-            "release_date": "2019-06-12T16:34:36.239956",
+            "panelsJSON": "[{\"id\": \"Help-About\", \"type\": \"visualization\", \"title\": \"About\", \"version\": \"6.1.0-1\", \"gridData\": {\"h\": 5, \"x\": 6, \"w\": 6, \"i\": \"1\", \"y\": 0}, \"panelIndex\": \"1\"}, {\"id\": \"Help-Acknowledgments\", \"type\": \"visualization\", \"title\": \"Acknowledgments\", \"version\": \"6.1.0-1\", \"gridData\": {\"h\": 3, \"x\": 6, \"w\": 6, \"i\": \"2\", \"y\": 5}, \"panelIndex\": \"2\"}, {\"id\": \"Help-UI\", \"type\": \"visualization\", \"title\": \"User Interface\", \"version\": \"6.1.0-1\", \"gridData\": {\"h\": 8, \"x\": 0, \"w\": 6, \"i\": \"4\", \"y\": 0}, \"panelIndex\": \"4\"}]",
+            "release_date": "2019-07-23T15:26:59.729998",
             "timeRestore": false,
             "title": "About",
             "uiStateJSON": "{\"P-1\":{\"title\":\"About\"},\"P-2\":{\"title\":\"Acknowledgments\"},\"P-4\":{\"title\":\"User Interface\"}}",
