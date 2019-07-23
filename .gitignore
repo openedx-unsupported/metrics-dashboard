@@ -1,3 +1,8 @@
 credentials.cfg
 logs/all.log
 override.cfg
+projects.json
+.gitignore
+dashboards/
+.DS_Store
+__pycache__/
