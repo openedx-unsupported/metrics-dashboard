@@ -26,10 +26,11 @@ for repo in repos:
                 git_author_email = commit.commit.author.email
                 contributor = people[username]
                 if contributor['email'] != git_author_email:
-                    print(git_author_email)
                     if 'other_emails' in contributor and git_author_email not in contributor['other_emails']:
+                        print(git_author_email)
                         contributor['other_emails'].append(git_author_email)
                     if 'other_emails' not in contributor:
+                        print(git_author_email)
                         contributor.update({'other_emails': [git_author_email]})
 
             except: #inactive username, can't parse data
