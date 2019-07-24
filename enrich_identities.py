@@ -36,9 +36,7 @@ for repo in repos:
                 i = 0
 
     except:
-        print('Empty repository')
-        print()
-    break
+        print('Empty repository\n')
 
 with open('result.yaml', 'w') as outfile:
         yaml.dump(people, outfile, default_flow_style=False)
