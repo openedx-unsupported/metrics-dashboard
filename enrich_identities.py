@@ -4,40 +4,52 @@ based on the various emails they use to write git commits,
 which may differ from the email they use 
 """
 
-from github import Github
+import github3
 import yaml
 import os
 
+def add_email(username, git_commit):
+    git_author_email = git_commit.commit['author']['email']#see if you can get email from commit instead of git commit
+    contributor = people[username]
+    if contributor['email'] != git_author_email: #if the email is not the same
+        if 'other_emails' in contributor and git_author_email not in contributor['other_emails']:#check to see if it is in other emails
+            contributor['other_emails'].append(git_author_email)
+        elif 'other_emails' not in contributor: #or create the key other_emails and add it there
+            contributor['other_emails'] = [git_author_email]
+
+people = {}
+
+#first load the people.yaml file
 with open('people.yaml', 'r') as stream:
     try:
         people = yaml.safe_load(stream)
     except yaml.YAMLError as exc:
         print(exc)
 
-gh = Github(os.environ['GITHUB_KEY'])
-repos = gh.get_organization('edX').get_repos('public')
+gh = github3.login('alangsto', token=os.environ['GITHUB_KEY'])
+repos = gh.organization('edX').repositories()
+emails = []
 for repo in repos:
-    try:
-        commits = repo.get_commits()
-        for commit in commits:
+    if not repo.fork: #only look at repositories that are not forks
+            commits = repo.commits()
+            for commit in commits: #commit is a short commit, git_commit is a repository commit
+                git_commit = repo.commit(commit.sha)
 
-            try: #if the username is still active
-                username = commit.author.login
-                git_author_email = commit.commit.author.email
-                contributor = people[username]
-                if contributor['email'] != git_author_email:
-                    if 'other_emails' in contributor and git_author_email not in contributor['other_emails']:
-                        print(git_author_email)
-                        contributor['other_emails'].append(git_author_email)
-                    if 'other_emails' not in contributor:
-                        print(git_author_email)
-                        contributor.update({'other_emails': [git_author_email]})
+                try: #if the username is still active
+                    username = commit.author.login
+                    add_email(username, git_commit)
 
-            except: #inactive username, can't parse data
-                i = 0
+                except AttributeError as exc: 
+                    #then we want to look at name, and see if we can assign an email to an existing name
+                    for name in people:
+                        person = people[name]
+                        if person['name'] == git_commit.commit['author']['name']:
+                            add_email(name, git_commit)
+                except KeyError:#happens for usernames that aren't included in our people.yaml file
 
-    except:
-        print('Empty repository\n')
+                    print('Key Error: ' + commit.author.login + ", " + git_commit.commit['author']['name'])
 
+
+#create new yaml file with same format
 with open('result.yaml', 'w') as outfile:
         yaml.dump(people, outfile, default_flow_style=False)
