@@ -5,4 +5,5 @@ override.cfg
 __pycache__/
 projects.json
 dashboards/.DS_STORE
-
+people.yaml
+result.yaml
