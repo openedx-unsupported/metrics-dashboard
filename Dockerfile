@@ -5,7 +5,7 @@ USER root
 RUN apt-get update
 
 RUN pip3 install slackclient
-RUN pip3 install PyGithub
+RUN pip3 install github3.py
 
 # clone git repo
 RUN git clone https://github.com/openedx/metrics-dashboard.git ../../metrics-dashboard

@@ -2,8 +2,8 @@
 """ 
 Gets all of the repos/channels for a grimoirelabs project
 """
-
-from github import Github
+import os
+import github3
 from slackclient import SlackClient
 
 
@@ -23,8 +23,8 @@ def create_projects(projects, config):
     return projects
 
 def get_git_repos(org, token):
-    gh = Github(token)
-    repos = gh.get_organization(org).get_repos('public')
+    gh = github3.login('alangsto', token=os.environ['GITHUB_KEY'])
+    repos = gh.organization('edX').repositories()
     repo_list = []
     for repo in repos:
         if not repo.fork:
@@ -58,8 +58,8 @@ if __name__ == '__main__':
         }
     }
     config1 = {
-        'github' : {'api-token' : 'XXX'}, #use correct tokens here
-        'slack' : {'api-token' : 'XXX'}
+        'github' : {'api-token' : os.environ['GITHUB_KEY']}, #use correct tokens here
+        'slack' : {'api-token' : os.environ['SLACK_KEY']}
     }
 
     create_projects(projects1, config1)
