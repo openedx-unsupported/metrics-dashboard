@@ -24,7 +24,7 @@ def create_projects(projects, config):
 
 def get_git_repos(org, token):
     gh = github3.login('alangsto', token=os.environ['GITHUB_KEY'])
-    repos = gh.organization('edX').repositories()
+    repos = gh.organization('edX').repositories('public')
     repo_list = []
     for repo in repos:
         if not repo.fork:
