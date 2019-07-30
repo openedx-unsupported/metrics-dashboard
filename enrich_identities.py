@@ -63,6 +63,5 @@ for repo in repos:
             #if there is an empty repo
             pass
 
-
 #create new yaml file with same format
 write_file(people)
