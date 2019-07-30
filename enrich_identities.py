@@ -9,13 +9,17 @@ import yaml
 import os
 
 def add_email(username, git_commit):
-    git_author_email = git_commit.commit['author']['email']#see if you can get email from commit instead of git commit
+    git_author_email = git_commit.commit.author['email']#see if you can get email from commit instead of git commit
     contributor = people[username]
     if contributor['email'] != git_author_email: #if the email is not the same
         if 'other_emails' in contributor and git_author_email not in contributor['other_emails']:#check to see if it is in other emails
             contributor['other_emails'].append(git_author_email)
         elif 'other_emails' not in contributor: #or create the key other_emails and add it there
             contributor['other_emails'] = [git_author_email]
+
+def write_file(data):
+    with open('result.yaml', 'w') as outfile:
+        yaml.dump(data, outfile, default_flow_style=False)
 
 people = {}
 
@@ -32,24 +36,28 @@ emails = []
 for repo in repos:
     if not repo.fork: #only look at repositories that are not forks
             commits = repo.commits()
-            for commit in commits: #commit is a short commit, git_commit is a repository commit
-                git_commit = repo.commit(commit.sha)
+            for git_commit in commits: #commit is a short commit, git_commit is a repository commit
+                try:
+                    try: #if the username is still active
+                        username = git_commit.author.login
+                        add_email(username, git_commit)
 
-                try: #if the username is still active
-                    username = commit.author.login
-                    add_email(username, git_commit)
+                    except AttributeError as exc: 
+                        #then we want to look at name, and see if we can assign an email to an existing name
+                        for name in people:
+                            person = people[name]
+                            if person['name'] == git_commit.commit.author['name']:
+                                add_email(name, git_commit)
+                    except KeyError:
+                        #happens for usernames that aren't included in our people.yaml file
+                        print('Key Error: ' + git_commit.author.login + ", " + git_commit.commit.author['name'])
 
-                except AttributeError as exc: 
-                    #then we want to look at name, and see if we can assign an email to an existing name
-                    for name in people:
-                        person = people[name]
-                        if person['name'] == git_commit.commit['author']['name']:
-                            add_email(name, git_commit)
-                except KeyError:#happens for usernames that aren't included in our people.yaml file
-
-                    print('Key Error: ' + commit.author.login + ", " + git_commit.commit['author']['name'])
+                except github3.exceptions.ForbiddenError as exc:
+                    #if we hit a rate limit, still want to write to the file
+                    write_file(people)
+                    print(exc)
+                    break
 
 
 #create new yaml file with same format
-with open('result.yaml', 'w') as outfile:
-        yaml.dump(people, outfile, default_flow_style=False)
+write_file(people)
