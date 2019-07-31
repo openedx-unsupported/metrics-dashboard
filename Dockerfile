@@ -11,10 +11,10 @@ RUN pip3 install github3.py
 RUN git clone https://github.com/openedx/metrics-dashboard.git ../../metrics-dashboard
 
 # remove grimoirelabs files that are unnecessary
-RUN rm ../../identities.yaml && \
-	rm ../../infra.cfg && \
+RUN rm ../../infra.cfg && \
 	rm ../../dashboard.cfg && \
 	rm ../../aliases.json
+#	rm ../../identities.yaml && \
 
 # copy our files to correct location
 RUN cp /metrics-dashboard/set_config.py ../.. && \

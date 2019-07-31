@@ -12,7 +12,7 @@ sudo git clone https://alangsto:$GITHUB_KEY@github.com/edx/repo-tools-data.git
 sudo cp repo-tools-data/people.yaml .
 sudo rm -rf repo-tools-data
 echo "Loading identities . . . "
-sudo /usr/bin/python3 /create_identities.py
+#sudo /usr/bin/python3 /create_identities.py
 
 sleep 5
 
