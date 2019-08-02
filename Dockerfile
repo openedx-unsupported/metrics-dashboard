@@ -13,8 +13,8 @@ RUN git clone https://github.com/openedx/metrics-dashboard.git ../../metrics-das
 # remove grimoirelabs files that are unnecessary
 RUN rm ../../infra.cfg && \
 	rm ../../dashboard.cfg && \
-	rm ../../aliases.json
-#	rm ../../identities.yaml && \
+	rm ../../aliases.json && \
+	rm ../../identities.yaml
 
 # copy our files to correct location
 RUN cp /metrics-dashboard/set_config.py ../.. && \
