@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting . . . "
+echo "Starting GrimoireLabs. . . "
 cd /
 echo "Configuring credentials . . ."
 /usr/bin/python3 /set_config.py $GITHUB_KEY $SLACK_KEY $DB_USER $DB_PASS $DB_HOST $DB_NAME $ELASTIC_URL $KIBANA_URL
