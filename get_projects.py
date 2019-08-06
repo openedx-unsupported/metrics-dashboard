@@ -4,6 +4,7 @@ Gets all of the repos/channels for a grimoirelabs project
 """
 import os
 import github3
+import json
 from slackclient import SlackClient
 
 
@@ -53,7 +54,7 @@ if __name__ == '__main__':
         "Open edX": {
             "git": [ "edx"],
             "github": [],
-            "github:repos": [],
+            "github:repo": [],
             "slack": []
         }
     }

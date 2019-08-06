@@ -51,7 +51,7 @@ def enrich(data):
 def add_email(username, git_commit):
     git_author_email = git_commit.commit.author['email']#see if you can get email from commit instead of git commit
     contributor = people[username]
-    if contributor['email'] != git_author_email: #if the email is not the same
+    if git_author_email != '' and contributor['email'] != git_author_email: #if the email is not the same
         if 'other_emails' in contributor and git_author_email not in contributor['other_emails']:#check to see if it is in other emails
             contributor['other_emails'].append(git_author_email)
         elif 'other_emails' not in contributor: #or create the key other_emails and add it there
