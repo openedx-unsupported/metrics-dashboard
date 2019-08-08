@@ -8,10 +8,6 @@
       "enrich": ["github_issues", "github_issues_enrich", "issues_closed",
                  "issues_created", "issues_updated", "affiliations"]
   },
-  "pipermail": {
-      "raw": ["pipermail-raw"],
-      "enrich": ["mbox", "affiliations"]
-  },
   "github:repo": {
       "raw": ["github_repositories-raw"],
       "enrich": ["github_repositories"]
