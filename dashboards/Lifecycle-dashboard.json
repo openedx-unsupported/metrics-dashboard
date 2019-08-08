@@ -5,14 +5,21 @@
             "description": "Level of activity in git repositories, by Bitergia",
             "hits": 0,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"lucene\"}, \"version\": true, \"filter\": [], \"highlightAll\": true}"
+                "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"version\":true,\"filter\":[],\"highlightAll\":true}"
             },
             "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
-            "panelsJSON": "[{\"id\": \"cf0714e0-f7b1-11e8-865a-85ff6467a442\", \"type\": \"visualization\", \"title\": \"Active git repositories\", \"version\": \"6.1.4-1\", \"gridData\": {\"h\": 2, \"x\": 0, \"w\": 6, \"i\": \"1\", \"y\": 0}, \"panelIndex\": \"1\"}, {\"id\": \"7e6c62d0-f7af-11e8-865a-85ff6467a442\", \"type\": \"visualization\", \"title\": \"Top 25 repositories by commits\", \"version\": \"6.1.4-1\", \"gridData\": {\"h\": 5, \"x\": 0, \"w\": 6, \"i\": \"2\", \"y\": 2}, \"panelIndex\": \"2\"}, {\"id\": \"bb734a80-f7b0-11e8-865a-85ff6467a442\", \"type\": \"visualization\", \"title\": \"Top 25 repositories by authors\", \"version\": \"6.1.4-1\", \"gridData\": {\"h\": 7, \"x\": 6, \"w\": 6, \"i\": \"3\", \"y\": 0}, \"panelIndex\": \"3\"}, {\"id\": \"9ec5a2f0-f898-11e8-865a-85ff6467a442\", \"type\": \"visualization\", \"title\": \"Lifecycle\", \"version\": \"6.1.4-1\", \"gridData\": {\"h\": 4, \"x\": 0, \"w\": 12, \"i\": \"4\", \"y\": 7}, \"panelIndex\": \"4\"}]",
-            "release_date": "2019-07-23T15:27:07.257302",
-            "timeRestore": false,
+            "panelsJSON": "[{\"id\":\"cf0714e0-f7b1-11e8-865a-85ff6467a442\",\"type\":\"visualization\",\"title\":\"Active git repositories\",\"version\":\"6.1.4-1\",\"gridData\":{\"h\":2,\"x\":0,\"w\":6,\"i\":\"1\",\"y\":0},\"panelIndex\":\"1\"},{\"id\":\"7e6c62d0-f7af-11e8-865a-85ff6467a442\",\"type\":\"visualization\",\"title\":\"Top 25 repositories by commits\",\"version\":\"6.1.4-1\",\"gridData\":{\"h\":5,\"x\":0,\"w\":6,\"i\":\"2\",\"y\":2},\"panelIndex\":\"2\"},{\"id\":\"bb734a80-f7b0-11e8-865a-85ff6467a442\",\"type\":\"visualization\",\"title\":\"Top 25 repositories by authors\",\"version\":\"6.1.4-1\",\"gridData\":{\"h\":7,\"x\":6,\"w\":6,\"i\":\"3\",\"y\":0},\"panelIndex\":\"3\"},{\"id\":\"9ec5a2f0-f898-11e8-865a-85ff6467a442\",\"type\":\"visualization\",\"title\":\"Lifecycle\",\"version\":\"6.1.4-1\",\"gridData\":{\"h\":4,\"x\":0,\"w\":12,\"i\":\"4\",\"y\":7},\"panelIndex\":\"4\"}]",
+            "refreshInterval": {
+                "display": "Off",
+                "pause": false,
+                "value": 0
+            },
+            "release_date": "2019-08-08T16:55:29.148786",
+            "timeFrom": "now-1y",
+            "timeRestore": true,
+            "timeTo": "now",
             "title": "Lifecycle",
-            "uiStateJSON": "{\"P-2\":{\"vis\":{\"defaultColors\":{\"0 - 400\":\"rgb(247,252,245)\",\"400 - 800\":\"rgb(233,247,228)\",\"800 - 1,200\":\"rgb(211,238,205)\",\"1,200 - 1,600\":\"rgb(184,227,177)\",\"1,600 - 2,000\":\"rgb(152,213,148)\",\"2,000 - 2,400\":\"rgb(116,196,118)\",\"2,400 - 2,800\":\"rgb(75,176,98)\",\"2,800 - 3,200\":\"rgb(47,152,79)\",\"3,200 - 3,600\":\"rgb(21,127,59)\",\"3,600 - 4,000\":\"rgb(0,100,40)\"}}},\"P-3\":{\"vis\":{\"defaultColors\":{\"0 - 33\":\"rgb(247,252,245)\",\"33 - 65\":\"rgb(199,233,192)\",\"65 - 98\":\"rgb(116,196,118)\",\"98 - 130\":\"rgb(35,139,69)\"}}}}",
+            "uiStateJSON": "{\"P-2\":{\"vis\":{\"defaultColors\":{\"0 - 60\":\"rgb(247,252,245)\",\"60 - 120\":\"rgb(233,247,228)\",\"120 - 180\":\"rgb(211,238,205)\",\"180 - 240\":\"rgb(184,227,177)\",\"240 - 300\":\"rgb(152,213,148)\",\"300 - 360\":\"rgb(116,196,118)\",\"360 - 420\":\"rgb(75,176,98)\",\"420 - 480\":\"rgb(47,152,79)\",\"480 - 540\":\"rgb(21,127,59)\",\"540 - 600\":\"rgb(0,100,40)\"}}},\"P-3\":{\"vis\":{\"defaultColors\":{\"0 - 20\":\"rgb(247,252,245)\",\"20 - 40\":\"rgb(199,233,192)\",\"40 - 60\":\"rgb(116,196,118)\",\"60 - 80\":\"rgb(35,139,69)\"}}}}",
             "version": 1
         }
     },

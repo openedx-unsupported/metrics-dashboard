@@ -5,11 +5,11 @@
             "description": "Git Areas of Code panel by Bitergia",
             "hits": 0,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"filter\": [{\"meta\": {\"key\": \"files\", \"type\": \"phrase\", \"value\": \"0\", \"disabled\": false, \"params\": {\"type\": \"phrase\", \"query\": \"0\"}, \"index\": \"git\", \"negate\": true, \"alias\": \"Empty Commits\"}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"files\": {\"type\": \"phrase\", \"query\": \"0\"}}}}, {\"meta\": {\"key\": \"author_bot\", \"type\": \"phrase\", \"value\": \"true\", \"disabled\": false, \"params\": {\"type\": \"phrase\", \"query\": true}, \"index\": \"git\", \"negate\": true, \"alias\": \"Bots\"}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"author_bot\": {\"type\": \"phrase\", \"query\": true}}}}], \"version\": true, \"query\": {\"language\": \"lucene\", \"query\": {\"query_string\": {\"analyze_wildcard\": true, \"default_field\": \"*\", \"query\": \"*\"}}}, \"highlightAll\": true}"
+                "searchSourceJSON": "{\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":{\"query_string\":{\"default_field\":\"*\",\"analyze_wildcard\":true,\"query\":\"*\"}}},\"highlightAll\":true,\"filter\":[{\"meta\":{\"index\":\"git\",\"alias\":\"Empty Commits\",\"key\":\"files\",\"type\":\"phrase\",\"value\":\"0\",\"negate\":true,\"params\":{\"type\":\"phrase\",\"query\":\"0\"},\"disabled\":false},\"$state\":{\"store\":\"appState\"},\"query\":{\"match\":{\"files\":{\"type\":\"phrase\",\"query\":\"0\"}}}},{\"meta\":{\"index\":\"git\",\"alias\":\"Bots\",\"key\":\"author_bot\",\"type\":\"phrase\",\"value\":\"true\",\"negate\":true,\"params\":{\"type\":\"phrase\",\"query\":true},\"disabled\":false},\"$state\":{\"store\":\"appState\"},\"query\":{\"match\":{\"author_bot\":{\"type\":\"phrase\",\"query\":true}}}}]}"
             },
             "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true}",
-            "panelsJSON": "[{\"id\": \"git_areas_code_emergingtech_authors\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"1\", \"h\": 6, \"y\": 8, \"x\": 0, \"w\": 6}, \"title\": \"Most Active Developers\", \"panelIndex\": \"1\"}, {\"id\": \"git_areas_code_emergingtech_files\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"2\", \"h\": 6, \"y\": 14, \"x\": 0, \"w\": 6}, \"title\": \"Most Modified Files\", \"panelIndex\": \"2\"}, {\"id\": \"git_areas_code_emergingtech_organizations\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"3\", \"h\": 3, \"y\": 0, \"x\": 6, \"w\": 3}, \"title\": \"Organizations\", \"panelIndex\": \"3\"}, {\"id\": \"git_areas_code_emergingtech_projects\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"4\", \"h\": 3, \"y\": 0, \"x\": 9, \"w\": 3}, \"title\": \"Projects\", \"panelIndex\": \"4\"}, {\"id\": \"git_areas_of_code_file_exts\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"5\", \"h\": 3, \"y\": 3, \"x\": 9, \"w\": 3}, \"title\": \"File Extensions\", \"panelIndex\": \"5\"}, {\"id\": \"git_areas_of_code_file_types\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"6\", \"h\": 3, \"y\": 3, \"x\": 6, \"w\": 3}, \"title\": \"File Types\", \"panelIndex\": \"6\"}, {\"id\": \"git_areas_of_code_path_elements\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"7\", \"h\": 3, \"y\": 5, \"x\": 0, \"w\": 6}, \"title\": \"Most Active Path Elements\", \"panelIndex\": \"7\"}, {\"id\": \"git_aoc_main_numbers\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"8\", \"h\": 2, \"y\": 0, \"x\": 0, \"w\": 6}, \"title\": \"Summary\", \"panelIndex\": \"8\"}, {\"id\": \"git_areas_code_emergingtech_dirs\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"9\", \"h\": 6, \"y\": 14, \"x\": 6, \"w\": 6}, \"title\": \"Most Active Directories\", \"panelIndex\": \"9\"}, {\"id\": \"git_aoc_added_vs_removed\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"10\", \"h\": 3, \"y\": 2, \"x\": 0, \"w\": 6}, \"title\": \"Lines Added vs Removed\", \"panelIndex\": \"10\"}, {\"id\": \"4480aa40-72da-11e8-a4e7-6b1c6a13c58d\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"11\", \"h\": 4, \"y\": 6, \"x\": 6, \"w\": 6}, \"title\": \"Organizations\", \"panelIndex\": \"11\"}, {\"id\": \"818b7f00-72da-11e8-a4e7-6b1c6a13c58d\", \"type\": \"visualization\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"12\", \"h\": 4, \"y\": 10, \"x\": 6, \"w\": 6}, \"title\": \"Projects\", \"panelIndex\": \"12\"}]",
-            "release_date": "2019-07-23T15:27:14.054802",
+            "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":8,\"w\":6,\"h\":6,\"i\":\"1\"},\"id\":\"git_areas_code_emergingtech_authors\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"Most Active Developers\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":0,\"y\":14,\"w\":6,\"h\":6,\"i\":\"2\"},\"id\":\"git_areas_code_emergingtech_files\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"Most Modified Files\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":6,\"y\":0,\"w\":3,\"h\":3,\"i\":\"3\"},\"id\":\"git_areas_code_emergingtech_organizations\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"Organizations\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":9,\"y\":0,\"w\":3,\"h\":3,\"i\":\"5\"},\"id\":\"git_areas_of_code_file_exts\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"File Extensions\"},{\"panelIndex\":\"7\",\"gridData\":{\"x\":0,\"y\":5,\"w\":6,\"h\":3,\"i\":\"7\"},\"id\":\"git_areas_of_code_path_elements\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"Most Active Path Elements\"},{\"panelIndex\":\"8\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":2,\"i\":\"8\"},\"id\":\"git_aoc_main_numbers\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"Summary\"},{\"panelIndex\":\"9\",\"gridData\":{\"x\":6,\"y\":7,\"w\":6,\"h\":6,\"i\":\"9\"},\"id\":\"git_areas_code_emergingtech_dirs\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"Most Active Directories\"},{\"panelIndex\":\"10\",\"gridData\":{\"x\":0,\"y\":2,\"w\":6,\"h\":3,\"i\":\"10\"},\"id\":\"git_aoc_added_vs_removed\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"Lines Added vs Removed\"},{\"panelIndex\":\"11\",\"gridData\":{\"x\":6,\"y\":3,\"w\":6,\"h\":4,\"i\":\"11\"},\"id\":\"4480aa40-72da-11e8-a4e7-6b1c6a13c58d\",\"version\":\"6.1.0-3\",\"type\":\"visualization\",\"title\":\"Organizations\"}]",
+            "release_date": "2019-08-08T16:55:23.753892",
             "timeRestore": false,
             "title": "Git Areas of Code",
             "uiStateJSON": "{\"P-1\":{\"title\":\"Most Active Developers\",\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-10\":{\"title\":\"Lines Added vs Removed\"},\"P-2\":{\"title\":\"Most Modified Files\",\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-3\":{\"title\":\"Organizations\"},\"P-4\":{\"title\":\"Projects\"},\"P-5\":{\"title\":\"File Extensions\"},\"P-6\":{\"title\":\"File Types\"},\"P-7\":{\"title\":\"Most Active Path Elements\"},\"P-8\":{\"title\":\"Summary\"},\"P-9\":{\"title\":\"Most Active Directories\",\"vis\":{\"params\":{\"sort\":{\"columnIndex\":1,\"direction\":null}}}},\"P-11\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-12\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
@@ -69,19 +69,6 @@
             }
         },
         {
-            "id": "git_areas_code_emergingtech_projects",
-            "value": {
-                "description": "",
-                "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"index\":\"git_areas_of_code\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-                },
-                "title": "git_areas_code_emergingtech_projects",
-                "uiStateJSON": "{}",
-                "version": 1,
-                "visState": "{\"title\":\"git_areas_code_emergingtech_projects\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"project\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}"
-            }
-        },
-        {
             "id": "git_areas_of_code_file_exts",
             "value": {
                 "description": "",
@@ -92,19 +79,6 @@
                 "uiStateJSON": "{}",
                 "version": 1,
                 "visState": "{\"title\":\"git_areas_of_code_file_exts\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"file_ext\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}"
-            }
-        },
-        {
-            "id": "git_areas_of_code_file_types",
-            "value": {
-                "description": "",
-                "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"index\":\"git_areas_of_code\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-                },
-                "title": "git_areas_of_code_file_types",
-                "uiStateJSON": "{}",
-                "version": 1,
-                "visState": "{\"title\":\"git_areas_of_code_file_types\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"filetype\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}"
             }
         },
         {
@@ -170,19 +144,6 @@
                 "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
                 "version": 1,
                 "visState": "{\"title\":\"git_areas_code_organizations\",\"type\":\"table\",\"params\":{\"perPage\":5,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Modified Files\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"author_uuid\",\"customLabel\":\"Developers\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"addedlines\",\"customLabel\":\"Added Lines\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"removedlines\",\"customLabel\":\"Removed Lines\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"author_org_name\",\"size\":99999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Organization\"}}]}"
-            }
-        },
-        {
-            "id": "818b7f00-72da-11e8-a4e7-6b1c6a13c58d",
-            "value": {
-                "description": "",
-                "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"index\":\"git_areas_of_code\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
-                },
-                "title": "git_areas_code_projects",
-                "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
-                "version": 1,
-                "visState": "{\"title\":\"git_areas_code_projects\",\"type\":\"table\",\"params\":{\"perPage\":5,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Modified Files\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"author_uuid\",\"customLabel\":\"Developers\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"addedlines\",\"customLabel\":\"Added Lines\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"removedlines\",\"customLabel\":\"Removed Lines\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"project\",\"size\":99999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Project\"}}]}"
             }
         }
     ]

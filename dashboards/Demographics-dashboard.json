@@ -5,16 +5,16 @@
             "description": "Demographics panel by Bitergia",
             "hits": 0,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"filter\": [{\"script\": {\"script\": {\"inline\": \"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if (doc['_index'].value.contains('-')) {\\n    doc['_index'].value.substring(0, doc['_index'].value.indexOf(\\\"-\\\"))\\n} else if (doc['_index'].value.contains('_')) {\\n    doc['_index'].value.substring(0, doc['_index'].value.indexOf(\\\"_\\\")) \\n} else {\\n    doc['_index'].value\\n} }, params.value);\", \"lang\": \"painless\", \"params\": {\"value\": \"git\"}}}, \"meta\": {\"key\": \"data_source\", \"type\": \"phrase\", \"field\": \"data_source\", \"disabled\": false, \"value\": \"git\", \"params\": {\"value\": \"git\"}, \"controlledBy\": \"1539605670712\", \"index\": \"92dc55d0-d073-11e8-8aac-ef7fd4d8cbad\", \"negate\": false, \"alias\": null}, \"$state\": {\"store\": \"appState\"}}], \"version\": true, \"query\": {\"language\": \"lucene\", \"query\": {\"query_string\": {\"analyze_wildcard\": true, \"default_field\": \"*\", \"query\": \"*\"}}}, \"highlightAll\": true}"
+                "searchSourceJSON": "{\"version\":true,\"highlightAll\":true,\"query\":{\"language\":\"lucene\",\"query\":{\"query_string\":{\"default_field\":\"*\",\"query\":\"*\",\"analyze_wildcard\":true}}},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"params\":{\"value\":\"git\"},\"key\":\"data_source\",\"type\":\"phrase\",\"value\":\"git\",\"field\":\"data_source\",\"alias\":null,\"disabled\":false,\"negate\":false,\"index\":\"92dc55d0-d073-11e8-8aac-ef7fd4d8cbad\",\"controlledBy\":\"1539605670712\"},\"script\":{\"script\":{\"params\":{\"value\":\"git\"},\"lang\":\"painless\",\"inline\":\"boolean compare(Supplier s, def v) {return s.get() == v;}compare(() -> { if (doc['_index'].value.contains('-')) {\\n    doc['_index'].value.substring(0, doc['_index'].value.indexOf(\\\"-\\\"))\\n} else if (doc['_index'].value.contains('_')) {\\n    doc['_index'].value.substring(0, doc['_index'].value.indexOf(\\\"_\\\")) \\n} else {\\n    doc['_index'].value\\n} }, params.value);\"}}}]}"
             },
             "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true}",
-            "panelsJSON": "[{\"id\": \"00cf9cf0-d074-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"12\", \"h\": 2, \"y\": 0, \"x\": 3, \"w\": 3}, \"title\": \"Data Source\", \"panelIndex\": \"12\"}, {\"id\": \"eb3ce360-d074-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"13\", \"h\": 2, \"y\": 0, \"x\": 6, \"w\": 6}, \"title\": \"Contributions\", \"panelIndex\": \"13\"}, {\"id\": \"a1c888c0-d082-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"14\", \"h\": 2, \"y\": 0, \"x\": 0, \"w\": 3}, \"title\": \"Summary\", \"panelIndex\": \"14\"}, {\"id\": \"da9bf560-d082-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"15\", \"h\": 3, \"y\": 2, \"x\": 0, \"w\": 5}, \"title\": \"People Leaving\", \"panelIndex\": \"15\"}, {\"id\": \"3c5bc320-d083-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"16\", \"h\": 3, \"y\": 2, \"x\": 5, \"w\": 7}, \"title\": \"Contributors getting inactive\", \"panelIndex\": \"16\"}, {\"id\": \"05f19180-d087-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"17\", \"h\": 3, \"y\": 5, \"x\": 0, \"w\": 5}, \"title\": \"Attracted Developers\", \"panelIndex\": \"17\"}, {\"id\": \"c8d50220-d089-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"18\", \"h\": 3, \"y\": 5, \"x\": 5, \"w\": 7}, \"title\": \"Last Attracted Developers\", \"panelIndex\": \"18\"}, {\"id\": \"c90878c0-d08a-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"19\", \"h\": 4, \"y\": 8, \"x\": 0, \"w\": 6}, \"title\": \"Organizations\", \"panelIndex\": \"19\"}, {\"id\": \"5db4e5f0-d08e-11e8-8aac-ef7fd4d8cbad\", \"type\": \"visualization\", \"version\": \"6.1.0-1\", \"gridData\": {\"i\": \"20\", \"h\": 4, \"y\": 8, \"x\": 6, \"w\": 6}, \"title\": \"Projects\", \"panelIndex\": \"20\"}, {\"id\": \"da08a9e0-1f01-11e9-ba47-d5cbef43f8d3\", \"type\": \"visualization\", \"version\": \"6.1.4-1\", \"gridData\": {\"i\": \"21\", \"h\": 3, \"y\": 12, \"x\": 0, \"w\": 12}, \"title\": \"Demographics\", \"panelIndex\": \"21\"}]",
+            "panelsJSON": "[{\"panelIndex\":\"13\",\"gridData\":{\"x\":5,\"y\":0,\"w\":7,\"h\":2,\"i\":\"13\"},\"version\":\"6.1.0-1\",\"title\":\"Contributions\",\"type\":\"visualization\",\"id\":\"eb3ce360-d074-11e8-8aac-ef7fd4d8cbad\"},{\"panelIndex\":\"14\",\"gridData\":{\"x\":0,\"y\":0,\"w\":5,\"h\":2,\"i\":\"14\"},\"version\":\"6.1.0-1\",\"title\":\"Summary\",\"type\":\"visualization\",\"id\":\"a1c888c0-d082-11e8-8aac-ef7fd4d8cbad\"},{\"panelIndex\":\"15\",\"gridData\":{\"x\":0,\"y\":2,\"w\":5,\"h\":4,\"i\":\"15\"},\"version\":\"6.1.0-1\",\"title\":\"People Leaving\",\"type\":\"visualization\",\"id\":\"da9bf560-d082-11e8-8aac-ef7fd4d8cbad\"},{\"panelIndex\":\"16\",\"gridData\":{\"x\":5,\"y\":2,\"w\":7,\"h\":3,\"i\":\"16\"},\"version\":\"6.1.0-1\",\"title\":\"Contributors getting inactive\",\"type\":\"visualization\",\"id\":\"3c5bc320-d083-11e8-8aac-ef7fd4d8cbad\"},{\"panelIndex\":\"17\",\"gridData\":{\"x\":0,\"y\":6,\"w\":5,\"h\":4,\"i\":\"17\"},\"version\":\"6.1.0-1\",\"title\":\"Attracted Developers\",\"type\":\"visualization\",\"id\":\"05f19180-d087-11e8-8aac-ef7fd4d8cbad\"},{\"panelIndex\":\"18\",\"gridData\":{\"x\":5,\"y\":5,\"w\":7,\"h\":3,\"i\":\"18\"},\"version\":\"6.1.0-1\",\"title\":\"Last Attracted Developers\",\"type\":\"visualization\",\"id\":\"c8d50220-d089-11e8-8aac-ef7fd4d8cbad\"},{\"panelIndex\":\"19\",\"gridData\":{\"x\":5,\"y\":8,\"w\":7,\"h\":2,\"i\":\"19\"},\"version\":\"6.1.0-1\",\"title\":\"Organizations\",\"type\":\"visualization\",\"id\":\"c90878c0-d08a-11e8-8aac-ef7fd4d8cbad\"},{\"panelIndex\":\"21\",\"gridData\":{\"x\":0,\"y\":10,\"w\":12,\"h\":3,\"i\":\"21\"},\"version\":\"6.1.4-1\",\"title\":\"Demographics\",\"type\":\"visualization\",\"id\":\"da08a9e0-1f01-11e9-ba47-d5cbef43f8d3\"}]",
             "refreshInterval": {
                 "display": "Off",
                 "pause": false,
                 "value": 0
             },
-            "release_date": "2019-07-23T15:27:10.195958",
+            "release_date": "2019-08-08T16:55:20.512007",
             "timeFrom": "now-10y",
             "timeRestore": true,
             "timeTo": "now",
@@ -37,19 +37,6 @@
     ],
     "searches": [],
     "visualizations": [
-        {
-            "id": "00cf9cf0-d074-11e8-8aac-ef7fd4d8cbad",
-            "value": {
-                "description": "",
-                "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{}"
-                },
-                "title": "demographics_data_source",
-                "uiStateJSON": "{}",
-                "version": 1,
-                "visState": "{\"title\":\"demographics_data_source\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1539605670712\",\"indexPattern\":\"92dc55d0-d073-11e8-8aac-ef7fd4d8cbad\",\"fieldName\":\"data_source\",\"label\":\"Data Source\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":false},\"aggs\":[]}"
-            }
-        },
         {
             "id": "eb3ce360-d074-11e8-8aac-ef7fd4d8cbad",
             "value": {
@@ -139,19 +126,6 @@
                 "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null},\"config\":{\"searchKeyword\":\"\"}}}}",
                 "version": 1,
                 "visState": "{\"title\":\"demographics_organizations_table\",\"type\":\"table\",\"params\":{\"perPage\":5,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Contributions\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"author_org_name\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Organization\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"author_uuid\",\"json\":\"{\\\"precision_threshold\\\": 3000}\",\"customLabel\":\"Authors\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"project\",\"json\":\"{\\\"precision_threshold\\\": 3000}\",\"customLabel\":\"Projects\"}}]}"
-            }
-        },
-        {
-            "id": "5db4e5f0-d08e-11e8-8aac-ef7fd4d8cbad",
-            "value": {
-                "description": "",
-                "kibanaSavedObjectMeta": {
-                    "searchSourceJSON": "{\"index\":\"92dc55d0-d073-11e8-8aac-ef7fd4d8cbad\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
-                },
-                "title": "demographics_top_projects",
-                "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null},\"config\":{\"searchKeyword\":\"\"}}}}",
-                "version": 1,
-                "visState": "{\"title\":\"demographics_top_projects\",\"type\":\"table\",\"params\":{\"perPage\":5,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Contributions\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"project\",\"size\":1000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Project\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"author_uuid\",\"json\":\"{\\\"precision_threshold\\\": 3000}\",\"customLabel\":\"Authors\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"author_org_name\",\"json\":\"{\\\"precision_threshold\\\": 3000}\",\"customLabel\":\"Organizations\"}}]}"
             }
         },
         {

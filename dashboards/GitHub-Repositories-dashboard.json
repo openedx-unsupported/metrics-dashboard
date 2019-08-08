@@ -5,12 +5,19 @@
             "description": "GitHub repositories panel by Bitergia",
             "hits": 0,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"lucene\"}, \"version\": true, \"highlightAll\": true, \"filter\": []}"
+                "searchSourceJSON": "{\"highlightAll\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"version\":true,\"filter\":[]}"
             },
             "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
-            "panelsJSON": "[{\"title\": \"GitHub Repositories\", \"gridData\": {\"h\": 2, \"y\": 0, \"i\": \"1\", \"x\": 0, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"096986d0-44de-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"1\", \"type\": \"visualization\"}, {\"title\": \"Repositories\", \"gridData\": {\"h\": 4, \"y\": 0, \"i\": \"2\", \"x\": 6, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"27c99030-45e1-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"2\", \"type\": \"visualization\"}, {\"title\": \"Stars over time (top 10)\", \"gridData\": {\"h\": 5, \"y\": 13, \"i\": \"3\", \"x\": 0, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"9db510a0-45e4-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"3\", \"type\": \"visualization\"}, {\"title\": \"Forks over time (top 10)\", \"gridData\": {\"h\": 5, \"y\": 6, \"i\": \"4\", \"x\": 0, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"1dc5e7c0-45e4-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"4\", \"type\": \"visualization\"}, {\"title\": \"Forks: Growth Deltas over time (top 10)\", \"gridData\": {\"h\": 5, \"y\": 6, \"i\": \"5\", \"x\": 6, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"4a782a80-45e4-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"5\", \"type\": \"visualization\"}, {\"title\": \"Subscribers over time (top 10)\", \"gridData\": {\"h\": 5, \"y\": 20, \"i\": \"6\", \"x\": 0, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"ba68ef50-45e4-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"6\", \"type\": \"visualization\"}, {\"title\": \"Subscribers: Growth Deltas over time (top 10)\", \"gridData\": {\"h\": 5, \"y\": 20, \"i\": \"7\", \"x\": 6, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"6f920a60-45e5-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"7\", \"type\": \"visualization\"}, {\"title\": \"Stars: Growth Deltas over time (top 10)\", \"gridData\": {\"h\": 5, \"y\": 13, \"i\": \"8\", \"x\": 6, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"3e1965f0-45e5-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"8\", \"type\": \"visualization\"}, {\"title\": \"\", \"gridData\": {\"h\": 2, \"y\": 2, \"i\": \"9\", \"x\": 0, \"w\": 6}, \"version\": \"6.1.4-1\", \"id\": \"89b045e0-45ec-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"9\", \"type\": \"visualization\"}, {\"title\": \"\", \"gridData\": {\"h\": 2, \"y\": 11, \"i\": \"10\", \"x\": 0, \"w\": 12}, \"version\": \"6.1.4-1\", \"id\": \"89ab8e80-463a-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"10\", \"type\": \"visualization\"}, {\"title\": \"\", \"gridData\": {\"h\": 2, \"y\": 18, \"i\": \"11\", \"x\": 0, \"w\": 12}, \"version\": \"6.1.4-1\", \"id\": \"9c41b470-463a-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"11\", \"type\": \"visualization\"}, {\"title\": \"\", \"gridData\": {\"h\": 2, \"y\": 4, \"i\": \"12\", \"x\": 0, \"w\": 12}, \"version\": \"6.1.4-1\", \"id\": \"814a79e0-463a-11e9-b68b-31a1aa44b23a\", \"panelIndex\": \"12\", \"type\": \"visualization\"}]",
-            "release_date": "2019-07-23T15:27:15.037856",
-            "timeRestore": false,
+            "panelsJSON": "[{\"gridData\":{\"h\":2,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"096986d0-44de-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"1\",\"title\":\"GitHub Repositories\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":4,\"i\":\"2\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"27c99030-45e1-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"2\",\"title\":\"Repositories\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":5,\"i\":\"3\",\"w\":6,\"x\":0,\"y\":13},\"id\":\"9db510a0-45e4-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"3\",\"title\":\"Stars over time (top 10)\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":5,\"i\":\"4\",\"w\":6,\"x\":0,\"y\":6},\"id\":\"1dc5e7c0-45e4-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"4\",\"title\":\"Forks over time (top 10)\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":5,\"i\":\"5\",\"w\":6,\"x\":6,\"y\":6},\"id\":\"4a782a80-45e4-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"5\",\"title\":\"Forks: Growth Deltas over time (top 10)\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":5,\"i\":\"6\",\"w\":6,\"x\":0,\"y\":20},\"id\":\"ba68ef50-45e4-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"6\",\"title\":\"Subscribers over time (top 10)\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":5,\"i\":\"7\",\"w\":6,\"x\":6,\"y\":20},\"id\":\"6f920a60-45e5-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"7\",\"title\":\"Subscribers: Growth Deltas over time (top 10)\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":5,\"i\":\"8\",\"w\":6,\"x\":6,\"y\":13},\"id\":\"3e1965f0-45e5-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"8\",\"title\":\"Stars: Growth Deltas over time (top 10)\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":2,\"i\":\"9\",\"w\":6,\"x\":0,\"y\":2},\"id\":\"89b045e0-45ec-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"9\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":2,\"i\":\"10\",\"w\":12,\"x\":0,\"y\":11},\"id\":\"89ab8e80-463a-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"10\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":2,\"i\":\"11\",\"w\":12,\"x\":0,\"y\":18},\"id\":\"9c41b470-463a-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"11\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"},{\"gridData\":{\"h\":2,\"i\":\"12\",\"w\":12,\"x\":0,\"y\":4},\"id\":\"814a79e0-463a-11e9-b68b-31a1aa44b23a\",\"panelIndex\":\"12\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.1.4-1\"}]",
+            "refreshInterval": {
+                "display": "Off",
+                "pause": false,
+                "value": 0
+            },
+            "release_date": "2019-08-08T16:55:21.560666",
+            "timeFrom": "now-1y",
+            "timeRestore": true,
+            "timeTo": "now",
             "title": "GitHub Repositories",
             "uiStateJSON": "{\"P-2\":{\"vis\":{\"params\":{\"config\":{\"searchKeyword\":\"\"},\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
             "version": 1
@@ -66,7 +73,7 @@
                 "title": "github_repositories_stars_evolution",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"title\":\"github_repositories_stars_evolution\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date,  split=origin:10, metric=max:stargazers_count).label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1M\"},\"aggs\":[]}"
+                "visState": "{\"title\":\"github_repositories_stars_evolution\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date,  split=origin:10, metric=max:stargazers_count).label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\").fit(mode=carry)\",\"interval\":\"1d\"},\"aggs\":[]}"
             }
         },
         {
@@ -79,7 +86,7 @@
                 "title": "github_repositories_forks_evolution",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"title\":\"github_repositories_forks_evolution\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date,  split=origin:10, metric=max:forks_count).label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1M\"},\"aggs\":[]}"
+                "visState": "{\"title\":\"github_repositories_forks_evolution\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date,  split=origin:10, metric=max:forks_count).label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\").fit(mode=carry)\",\"interval\":\"1d\"},\"aggs\":[]}"
             }
         },
         {
@@ -92,7 +99,7 @@
                 "title": "github_repositories_forks_evolution_derivative",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"title\":\"github_repositories_forks_evolution_derivative\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date,  split=origin:10, metric=max:forks_count).derivative().label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1M\"},\"aggs\":[]}"
+                "visState": "{\"title\":\"github_repositories_forks_evolution_derivative\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date,  split=origin:10, metric=max:forks_count).fit(mode=carry).derivative().label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1d\"},\"aggs\":[]}"
             }
         },
         {
@@ -105,7 +112,7 @@
                 "title": "github_repositories_subscribers_evolution",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"title\":\"github_repositories_subscribers_evolution\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date,  split=origin:10, metric=max:subscribers_count).label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1M\"},\"aggs\":[]}"
+                "visState": "{\"title\":\"github_repositories_subscribers_evolution\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date,  split=origin:10, metric=max:subscribers_count).label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\").fit(mode=carry)\",\"interval\":\"1d\"},\"aggs\":[]}"
             }
         },
         {
@@ -118,7 +125,7 @@
                 "title": "github_repositories_subscribers_evolution_derivative",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"title\":\"github_repositories_subscribers_evolution_derivative\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date, split=origin:10, metric=max:subscribers_count).derivative().label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1M\"},\"aggs\":[]}"
+                "visState": "{\"title\":\"github_repositories_subscribers_evolution_derivative\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date, split=origin:10, metric=max:subscribers_count).fit(mode=carry).derivative().label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1d\"},\"aggs\":[]}"
             }
         },
         {
@@ -131,7 +138,7 @@
                 "title": "github_repositories_stars_evolution_derivative",
                 "uiStateJSON": "{}",
                 "version": 1,
-                "visState": "{\"title\":\"github_repositories_stars_evolution_derivative\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date, split=origin:10, metric=max:stargazers_count).derivative().label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1M\"},\"aggs\":[]}"
+                "visState": "{\"title\":\"github_repositories_stars_evolution_derivative\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=github_repositories, timefield=grimoire_creation_date, split=origin:10, metric=max:stargazers_count).fit(mode=carry).derivative().label(\\\"$1\\\", \\\"^.* > origin:(\\\\S+) > .*\\\")\",\"interval\":\"1d\"},\"aggs\":[]}"
             }
         },
         {

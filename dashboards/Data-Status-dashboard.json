@@ -5,16 +5,16 @@
             "description": "Data Status panel by Bitergia",
             "hits": 0,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"version\": true, \"query\": {\"query\": {\"query_string\": {\"query\": \"*\", \"analyze_wildcard\": true, \"default_field\": \"*\"}}, \"language\": \"lucene\"}, \"filter\": [], \"highlightAll\": true}"
+                "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"lucene\", \"query\": {\"query_string\": {\"query\": \"*\", \"analyze_wildcard\": true, \"default_field\": \"*\"}}}, \"version\": true, \"highlightAll\": true}"
             },
             "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true}",
-            "panelsJSON": "[{\"id\": \"git_data_status_numbers\", \"type\": \"visualization\", \"title\": \"Git\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"4\", \"y\": 0, \"w\": 12, \"h\": 2, \"x\": 0}, \"panelIndex\": \"4\"}, {\"id\": \"github_issues_data_status_numbers\", \"type\": \"visualization\", \"title\": \"Github\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"5\", \"y\": 4, \"w\": 12, \"h\": 2, \"x\": 0}, \"panelIndex\": \"5\"}, {\"id\": \"slack_data_status_numbers\", \"type\": \"visualization\", \"title\": \"Slack\", \"version\": \"6.1.0-3\", \"gridData\": {\"i\": \"28\", \"y\": 14, \"w\": 12, \"h\": 2, \"x\": 0}, \"panelIndex\": \"28\"}]",
+            "panelsJSON": "[{\"title\": \"Git\", \"panelIndex\": \"4\", \"gridData\": {\"i\": \"4\", \"y\": 0, \"w\": 12, \"x\": 0, \"h\": 2}, \"id\": \"git_data_status_numbers\", \"type\": \"visualization\", \"version\": \"6.1.0-3\"}, {\"title\": \"Github\", \"panelIndex\": \"5\", \"gridData\": {\"i\": \"5\", \"y\": 4, \"w\": 12, \"x\": 0, \"h\": 2}, \"id\": \"github_issues_data_status_numbers\", \"type\": \"visualization\", \"version\": \"6.1.0-3\"}, {\"title\": \"Slack\", \"panelIndex\": \"28\", \"gridData\": {\"i\": \"28\", \"y\": 14, \"w\": 12, \"x\": 0, \"h\": 2}, \"id\": \"slack_data_status_numbers\", \"type\": \"visualization\", \"version\": \"6.1.0-3\"}]",
             "refreshInterval": {
                 "display": "Off",
                 "pause": false,
                 "value": 0
             },
-            "release_date": "2019-07-23T15:26:59.365781",
+            "release_date": "2019-08-08T16:55:19.688489",
             "timeFrom": "now-10y",
             "timeRestore": true,
             "timeTo": "now",

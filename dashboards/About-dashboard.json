@@ -9,7 +9,7 @@
             },
             "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true}",
             "panelsJSON": "[{\"id\": \"Help-About\", \"type\": \"visualization\", \"title\": \"About\", \"version\": \"6.1.0-1\", \"gridData\": {\"h\": 5, \"x\": 6, \"w\": 6, \"i\": \"1\", \"y\": 0}, \"panelIndex\": \"1\"}, {\"id\": \"Help-Acknowledgments\", \"type\": \"visualization\", \"title\": \"Acknowledgments\", \"version\": \"6.1.0-1\", \"gridData\": {\"h\": 3, \"x\": 6, \"w\": 6, \"i\": \"2\", \"y\": 5}, \"panelIndex\": \"2\"}, {\"id\": \"Help-UI\", \"type\": \"visualization\", \"title\": \"User Interface\", \"version\": \"6.1.0-1\", \"gridData\": {\"h\": 8, \"x\": 0, \"w\": 6, \"i\": \"4\", \"y\": 0}, \"panelIndex\": \"4\"}]",
-            "release_date": "2019-07-23T15:26:59.729998",
+            "release_date": "2019-08-08T16:55:10.792833",
             "timeRestore": false,
             "title": "About",
             "uiStateJSON": "{\"P-1\":{\"title\":\"About\"},\"P-2\":{\"title\":\"Acknowledgments\"},\"P-4\":{\"title\":\"User Interface\"}}",
