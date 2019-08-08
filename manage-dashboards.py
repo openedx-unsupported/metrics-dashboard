@@ -17,10 +17,15 @@ def export_dash():
     dashboards = search_dashboards(os.environ['ELASTIC_URL'], '.kibana')
 
     for dash in dashboards:
-        id = dash['_id'].split(':')[1] #get dashboard id
-        json_name = dash['title'].replace(' ', '-') + "-dashboard.json" #create filename for dashboard
+        #get dashboard id
+        id = dash['_id'].split(':')[1]
+
+        #create filename for dashboard
+        json_name = dash['title'].replace(' ', '-') + "-dashboard.json"
         file_path = 'dashboards/' + json_name
-        if re.match(r'[-\w_]+\.json',json_name): #check to make sure file being removed has a valid name
+
+        #check to make sure file being removed has a valid name
+        if re.match(r'[-\w_]+\.json',json_name):
             print('updating existing dashboard: ' + file_path)
             try:
                 os.remove(file_path)
@@ -28,10 +33,12 @@ def export_dash():
                 print('saving new dashboard: ' + file_path)
         else:
             raise Exception('Not a valid file path: ' + file_path)
-        export_dashboard( #export using kidash API
-            os.environ['ELASTIC_URL'], #elastic_url
-            id, #dashboard id
-            file_path, #export_file
+
+        #export using kidash API
+        export_dashboard(
+            os.environ['ELASTIC_URL'],
+            id,
+            file_path,
             '.kibana',
             False
         )
