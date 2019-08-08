@@ -17,7 +17,7 @@ def read_file():
     return people
 
 def enrich(data):
-    gh = github3.login('alangsto', token=os.environ['GITHUB_KEY'])
+    gh = github3.login(token=os.environ['GITHUB_KEY'])
     repos = gh.organization('edX').repositories('public')
     emails = []
     for repo in repos:
