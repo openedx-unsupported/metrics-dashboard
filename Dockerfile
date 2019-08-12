@@ -25,7 +25,8 @@ RUN cp /metrics-dashboard/set_config.py ../.. && \
 	cp /metrics-dashboard/aliases.json ../.. && \
 	cp /metrics-dashboard/dashboard.cfg ../.. && \
 	cp /metrics-dashboard/og_projects.json ../.. && \
-	cp /metrics-dashboard/create_dashboard.py ../..
+	cp /metrics-dashboard/create_dashboard.py ../.. && \
+	cp -a /metrics-dashboard/dashboards ../..
 
 
 
