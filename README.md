@@ -7,6 +7,8 @@ Link for read only access (anonymous access): https://openedx-metrics.herokuapp.
 
 # Components
 ## GrimoireLab
+Created by [Bitergia](https://bitergia.com/about/), GrimoireLab is open source software that can be used for data analytics. The specific software used in the metrics dashboard project is comprised of several parts, which are outlined in the [GrimoireLab tutorial](https://chaoss.github.io/grimoirelab-tutorial/README.html).
+
 ### Configuration Files for GrimoireLab
 ## Docker
 ### Building Dockerfile
