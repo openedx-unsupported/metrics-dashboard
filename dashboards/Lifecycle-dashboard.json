@@ -5,16 +5,16 @@
             "description": "Level of activity in git repositories, by Bitergia",
             "hits": 0,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"version\":true,\"filter\":[],\"highlightAll\":true}"
+                "searchSourceJSON": "{\"query\": {\"query\": \"\", \"language\": \"lucene\"}, \"version\": true, \"filter\": [], \"highlightAll\": true}"
             },
             "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
-            "panelsJSON": "[{\"id\":\"cf0714e0-f7b1-11e8-865a-85ff6467a442\",\"type\":\"visualization\",\"title\":\"Active git repositories\",\"version\":\"6.1.4-1\",\"gridData\":{\"h\":2,\"x\":0,\"w\":6,\"i\":\"1\",\"y\":0},\"panelIndex\":\"1\"},{\"id\":\"7e6c62d0-f7af-11e8-865a-85ff6467a442\",\"type\":\"visualization\",\"title\":\"Top 25 repositories by commits\",\"version\":\"6.1.4-1\",\"gridData\":{\"h\":5,\"x\":0,\"w\":6,\"i\":\"2\",\"y\":2},\"panelIndex\":\"2\"},{\"id\":\"bb734a80-f7b0-11e8-865a-85ff6467a442\",\"type\":\"visualization\",\"title\":\"Top 25 repositories by authors\",\"version\":\"6.1.4-1\",\"gridData\":{\"h\":7,\"x\":6,\"w\":6,\"i\":\"3\",\"y\":0},\"panelIndex\":\"3\"},{\"id\":\"9ec5a2f0-f898-11e8-865a-85ff6467a442\",\"type\":\"visualization\",\"title\":\"Lifecycle\",\"version\":\"6.1.4-1\",\"gridData\":{\"h\":4,\"x\":0,\"w\":12,\"i\":\"4\",\"y\":7},\"panelIndex\":\"4\"}]",
+            "panelsJSON": "[{\"id\": \"cf0714e0-f7b1-11e8-865a-85ff6467a442\", \"type\": \"visualization\", \"title\": \"Active git repositories\", \"version\": \"6.1.4-1\", \"gridData\": {\"h\": 2, \"x\": 0, \"w\": 6, \"i\": \"1\", \"y\": 0}, \"panelIndex\": \"1\"}, {\"id\": \"7e6c62d0-f7af-11e8-865a-85ff6467a442\", \"type\": \"visualization\", \"title\": \"Top 25 repositories by commits\", \"version\": \"6.1.4-1\", \"gridData\": {\"h\": 5, \"x\": 0, \"w\": 6, \"i\": \"2\", \"y\": 2}, \"panelIndex\": \"2\"}, {\"id\": \"bb734a80-f7b0-11e8-865a-85ff6467a442\", \"type\": \"visualization\", \"title\": \"Top 25 repositories by authors\", \"version\": \"6.1.4-1\", \"gridData\": {\"h\": 7, \"x\": 6, \"w\": 6, \"i\": \"3\", \"y\": 0}, \"panelIndex\": \"3\"}, {\"id\": \"9ec5a2f0-f898-11e8-865a-85ff6467a442\", \"type\": \"visualization\", \"title\": \"Lifecycle\", \"version\": \"6.1.4-1\", \"gridData\": {\"h\": 4, \"x\": 0, \"w\": 12, \"i\": \"4\", \"y\": 7}, \"panelIndex\": \"4\"}]",
             "refreshInterval": {
                 "display": "Off",
                 "pause": false,
                 "value": 0
             },
-            "release_date": "2019-08-08T20:46:39.942151",
+            "release_date": "2019-08-13T13:39:35.387854",
             "timeFrom": "now-1y",
             "timeRestore": true,
             "timeTo": "now",
