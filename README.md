@@ -69,12 +69,31 @@ The above command can be extremely useful for debugging purposes, as you have ac
 
 ## Additional Scripts ##
 ### manage-dashboards.py ###
+Used to import and export Kibana dashboards. 
+
+To export dashboards (i.e. save dashboards from Kibana to local computer), run this command locally:
+
+```python3 manage-dashboards.py export```
+
+To import dashboards (i.e. load dashboards into Kibana from local computer), run this command locally:
+
+```python3 manage-dashboards.py import```
+
+Dashboards will be automatically exported to and imported from the dashboards directory that can be found in your local clone of the metrics dashboard GitHub repository. 
+
+This script will only save dashboards locally. To save dashboards to the GitHub, push them to the repository. 
 ### set_config.py ###
+Used to configure SirMordred with sensitive information that cannot be hard-coded. Program reads environment variables and then writes their values to infra.cfg, a configuration file used by SirMordred.
 ### get_projects.py ###
+Used to modify the projects.json file, which specifies which repositories and Slack channels to pull from. The program gathers all public repositories in a given organization and all non-archived Slack channels readable by the given Slack api-token. 
 ### create_dashboard.py ###
+Orchestrates getting the credentials for API access and retrieving all repository and Slack channel for a given organization or repository. 
 ### enrich_identities.py ###
+Scrapes information from all Git commits in repositories in the edX organization. Program is used to update emails for individuals to aid in the use of SortingHat, which assigns individuals to an organization and maps data (Slack messages, Git commits) to an individual.
 ### create_identities.py ###
+Parses .yaml file in edX format (people.yaml) and converts it to a format that is parsable by GrimoireLabs.
 ### entrypoint.sh ###
+Script run in docker container when docker run command is issued. Runs many of the scripts listed above to set up config files before starting SirMordred.
 ## Heroku ##
 ### Add-Ons (MariaDB and Elasticsearch) ###
 #### Elasticsearch and Kibana ####
