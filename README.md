@@ -125,6 +125,8 @@ heroku container:release web --app openedx-metrics
 
 ## What Runs Where ##
 
+![Heroku App Layout](https://github.com/openedx/metrics-dashboard/blob/master/images/Heroku_App_Layout.png)
+
 # How to Update Code #
 ## Change in Credentials ##
 If any database, Elasticsearch, or API-token credentials are changed, environment variables on the Heroku app [settings page](https://dashboard.heroku.com/apps/openedx-metrics/settings) and on your local computer (for local testing purposes) should be updated to reflect those credential changes. The containers on Heroku will restart automatically if any environment variables on Heroku are changed. 
