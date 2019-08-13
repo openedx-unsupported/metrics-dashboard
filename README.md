@@ -127,6 +127,8 @@ heroku container:release web --app openedx-metrics
 
 ![Heroku App Layout](https://github.com/openedx/metrics-dashboard/blob/master/images/Heroku_App_Layout.png)
 
+The above photo shows the configuration of the project while it is running on Heroku. Elasticsearch and MariaDB are both Heroku add-ons, meaning that they are managed by third parties. The docker container used for the metrics dashboard app is run by a Heroku worker dyno, and has access to the add-ons through the add-ons’ URLs. The web dyno on Heroku contains a docker container running a reverse proxy nginx server. The web dyno has access to the accessible port on the Heroku app.
+
 # How to Update Code #
 ## Change in Credentials ##
 If any database, Elasticsearch, or API-token credentials are changed, environment variables on the Heroku app [settings page](https://dashboard.heroku.com/apps/openedx-metrics/settings) and on your local computer (for local testing purposes) should be updated to reflect those credential changes. The containers on Heroku will restart automatically if any environment variables on Heroku are changed. 
