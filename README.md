@@ -113,7 +113,7 @@ If you find it necessary to reset the Docker container running on Heroku, issue 
 ```heroku ps:restart worker -a openedx-metrics```
 
 ### Nginx ###
-In the web dyno of the Heroku app, there is an nginx reverse proxy server running in a docker container. The purpose of the server is to allow anonymous access to the dashboard and also allow users to use a short url (https://openedx-metrics.herokuapp.com) instead of the url for the aws instance. You cannot log into your admin account if you use the short url due to how the reverse proxy server is set up. 
+In the web dyno of the Heroku app, there is an nginx reverse proxy server running in a docker container. The purpose of the server is to allow anonymous access to the dashboard and also allow users to use a short url (https://openedx-metrics.herokuapp.com) instead of the url for the AWS instance that Kibana is running on. You cannot log into your admin account if you use the short url due to how the reverse proxy server is set up. 
 
 To build nginx container and push to Heroku, use these commands while in the nginx directory: 
 
