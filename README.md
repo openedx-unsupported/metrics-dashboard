@@ -51,7 +51,9 @@ When running the docker container locally for debugging, it’s connected to the
 If you want to run the project on your local computer as opposed to on Heroku, use this command **after stopping the container running on Heroku**:
 
 ```
-docker run --env DB_HOST --env DB_NAME --env DB_PASS --env DB_USER --env ELASTIC_URL --env GITHUB_KEY --env KIBANA_URL --env SLACK_KEY test_dockerfile
+docker run --env DB_HOST --env DB_NAME --env DB_PASS && \
+--env DB_USER --env ELASTIC_URL --env GITHUB_KEY && \
+--env KIBANA_URL --env SLACK_KEY test_dockerfile
 ```
 If you want to run the container locally, but use local files for testing purposes, you can use a command like this:
 
