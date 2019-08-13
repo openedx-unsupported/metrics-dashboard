@@ -32,7 +32,7 @@ In addition to providing the software for GrimoireLab, Bitergia also maintains s
 
 Should changes be made to the Dockerfile itself or to files in the GitHub repository, the Dockerfile will need to be rebuilt and pushed to Heroku. 
 
-**Please note: if the changes you are making include adding a new section to Kibana, please go to Adding a New Section to Kibana before rebuilding the image.**
+**Please note: if the changes you are making include adding a new section to Kibana, please go to [Adding a New Section to Kibana](https://github.com/openedx/metrics-dashboard#adding-a-new-section-to-kibana) before rebuilding the image.**
 
 To rebuild the Dockerfile, use the command in the project directory:
 
@@ -42,7 +42,7 @@ docker build --tag=test_dockerfile --no-cache .
 
 The no-cache flag is necessary due to the fact that files being changed are pulled from GitHub. If the no-cache flag is not used, the newest commits from the GitHub repository will not be pulled.
 
-To push to Heroku, go to How to Upload Changes to Heroku.
+To push to Heroku, go to [How to Upload Changes to Heroku](https://github.com/openedx/metrics-dashboard#how-to-upload-changes-to-heroku).
 
 ### Running Docker Container Locally ###
 
