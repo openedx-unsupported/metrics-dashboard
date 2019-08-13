@@ -8,7 +8,7 @@ echo "Loading projects . . . "
 /usr/bin/python3 /create_dashboard.py -r /og_projects.json -wr /projects.json -cf /override.cfg
 sleep 5
 
-git clone https://alangsto:$GITHUB_KEY@github.com/edx/repo-tools-data.git
+git clone https://$GITHUB_KEY@github.com/edx/repo-tools-data.git
 cp repo-tools-data/people.yaml .
 rm -rf repo-tools-data
 echo "Loading identities . . . "
