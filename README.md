@@ -127,11 +127,48 @@ heroku container:release web --app openedx-metrics
 
 # How to Update Code #
 ## Change in Credentials ##
+If any database, Elasticsearch, or API-token credentials are changed, environment variables on the Heroku app [settings page](https://dashboard.heroku.com/apps/openedx-metrics/settings) and on your local computer (for local testing purposes) should be updated to reflect those credential changes. The containers on Heroku will restart automatically if any environment variables on Heroku are changed. 
+
 ## Adding a New Section to Kibana ##
+A potential next step in the project would be to add a panel to analyze the Open edX discourse activity. Several steps must be taken in order to successfully add the panel, which are detailed below. **Please save current dashboards and push to GitHub before making changes.**
 ### Files to be Changed ###
+In order to add a new data source to pull from (i.e. Discourse, mailing list, etc.) two files need to be changed. The first file to be changed, dashboard.cfg, contains non-sensitive information necessary for SirMordred such as index names, default information for panels, and phases of SirMordred to complete. If you want to add a new data source, you must add something similar to the following to the dashboard.cfg file:
+
+```
+[discourse]
+raw_index = discourse_grimoirelab-raw
+enriched_index = discourse_grimoirelab
+```
+
+Details of what is needed in the section will be in the Perceval documentation for the data source.
+
+The other file that must be changed is projects.json, which outlines all URLs to collect data from. To add another data source, simply add another key in the dictionary specified by the value of “Open edX” similar to the current layout of the “git” or “slack” keys.
+
 ### How to Upload Changes to Heroku ###
+Once the necessary files have been changed, **and the current dashboards have been saved**, you can run the docker build command mentioned in [Building Dockerfile](https://github.com/openedx/metrics-dashboard#building-dockerfile). 
+
+Then run these series of commands:
+
+```
+heroku login
+heroku container:login
+docker tag test_dockerfile registry.heroku.com/openedx-metrics/worker
+docker push registry.heroku.com/openedx-metrics/worker
+heroku container:release worker -a openedx-metrics
+```
+
+After running the commands, make sure to import the previous dashboards you had saved using [manage-dashboards.py](https://github.com/openedx/metrics-dashboard#building-dockerfile)'s import functionality, so that you can keep any changes you made to the dashboards previous to releasing the application.
+
 ### Additional Information ###
+While you may think that adding a new section is straight forward, you may run into various unexpected requirements for how new sections should be added into the projects.json file. For example, when adding a new Slack section, the channels must be listed by their channel identifier alone, not in a URL, while the Git and Github sections both require URLs. The repository for [Perceval](https://github.com/chaoss/grimoirelab-perceval) has some information on how to format new sources of data, should you need it.
 
 # Useful Tools #
+* To check the status of indices in Elastic search, you can use:
+```
+curl https://<username>:<password>@847c0596a6326412c0313eb32d88595a.us-east-1.aws.found.io:9243/_cat/indices
+```
+
+* If you find the need to check the contents of the database, you can use [DBeaver](https://dbeaver.io/) and connect remotely to the database. 
 
 # Potential Next Steps #
+A good next step for the project would be to add in data from Discourse.
