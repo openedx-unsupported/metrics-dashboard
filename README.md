@@ -2,6 +2,7 @@
 Dashboard for Open edX intended to run in a docker container. 
 
 Link for admin access (must enter username and password):https://66f663f015aecb785655faf0aae52d04.us-east-1.aws.found.io:9243
+
 Link for read only access (anonymous access): https://openedx-metrics.herokuapp.com
 
 # Components
