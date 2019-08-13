@@ -95,11 +95,34 @@ Parses .yaml file in edX format (people.yaml) and converts it to a format that i
 ### entrypoint.sh ###
 Script run in docker container when docker run command is issued. Runs many of the scripts listed above to set up config files before starting SirMordred.
 ## Heroku ##
+Heroku integrates seamlessly with Docker to allow a user to push containers to a Heroku app. The process/container that runs SirMordred is hosted in a worker dyno on the openedx-metrics Heroku app. To check the logs of the openedx-metrics app use the command:
+
+```heroku logs -a openedx-metrics --tail```
+
 ### Add-Ons (MariaDB and Elasticsearch) ###
+There are two Heroku add-ons for the metrics dashboard project. One is a MariaDB add-on, while the other is an Elasticsearch add-on. Although the metrics dashboard project itself is hosted on Heroku, both of these add-ons are hosted on AWS and maintained by third parties. If any issues with the metrics dashboard should arise, checking the status of the add-ons is a good place to start after checking the logs of the app. To check the status of the apps, you can visit the individual settings pages by going to the [resources tab](https://dashboard.heroku.com/apps/openedx-metrics/resources) of the Heroku app, and then clicking on each of the add-on links. 
 #### Elasticsearch and Kibana ####
+You can use the Kibana UI to directly edit and save dashboards. If you want to also save the dashboards locally and then push them to GitHub, use [manage-dashboards.py](https://github.com/openedx/metrics-dashboard#manage-dashboardspy). 
+
+Using the Kibana UI, you can also add new users and grant them permissions. To do this, go to the Management tab on Kibana, and click “Users”. There are several predefined roles, which are outlined on the [Elasticsearch website](https://www.elastic.co/guide/en/elastic-stack-overview/current/built-in-roles.html).
 ### Potential Problems with Database ###
+If the database runs out of space, data from our sources will no longer be loaded correctly. If this is a problem, you will find an error in the Heroku logs that says “command INSERT denied to user . . .”. The current storage capacity is 1GB, and it should last us a while.
 ### Reset Container Running on Heroku ###
+If you find it necessary to reset the Docker container running on Heroku, issue the command:
+
+```heroku ps:restart worker -a openedx-metrics```
+
 ### Nginx ###
+In the web dyno of the Heroku app, there is an nginx reverse proxy server running in a docker container. The purpose of the server is to allow anonymous access to the dashboard and also allow users to use a short url (https://openedx-metrics.herokuapp.com) instead of the url for the aws instance. You cannot log into your admin account if you use the short url due to how the reverse proxy server is set up. 
+
+To build nginx container and push to Heroku, use these commands while in the nginx directory: 
+
+```
+docker build -t web .
+heroku container:push web --app openedx-metrics
+heroku container:release web --app openedx-metrics
+```
+
 ## What Runs Where ##
 
 # How to Update Code #
