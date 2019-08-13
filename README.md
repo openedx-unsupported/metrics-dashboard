@@ -56,7 +56,11 @@ docker run --env DB_HOST --env DB_NAME --env DB_PASS --env DB_USER --env ELASTIC
 If you want to run the container locally, but use local files for testing purposes, you can use a command like this:
 
 ```
-docker run -v $(pwd)/credentials.cfg:/override.cfg -v $(pwd)/infra.cfg:/infra.cfg -v $(pwd)/dashboard.cfg:/dashboard.cfg  -v $(pwd)/logs:/logs -v $(pwd)/identities.yaml:/identities.yaml -v $(pwd)/projects.json:/projects.json  -v $(pwd)/aliases.json:/aliases.json grimoirelab/installed
+docker run -v $(pwd)/credentials.cfg:/override.cfg && \
+-v $(pwd)/infra.cfg:/infra.cfg -v $(pwd)/dashboard.cfg:/dashboard.cfg && \
+-v $(pwd)/logs:/logs -v $(pwd)/identities.yaml:/identities.yaml && \
+-v $(pwd)/projects.json:/projects.json  && \
+-v $(pwd)/aliases.json:/aliases.json grimoirelab/installed
 ```
 
 The above command can be extremely useful for debugging purposes, as you have access to the logs from SirMordred. You can also test any changes you have made to configuration files locally before pushing them to GitHub. Although the container in this command is *grimoirelab/installed* as opposed to the *test_dockerfile* image used for the Heroku app, it essentially completes the same job, with the exception of not running the extra scripts that I have written.
