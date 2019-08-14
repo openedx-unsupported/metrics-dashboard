@@ -94,10 +94,21 @@ Scrapes information from all Git commits in repositories in the edX organization
 Parses .yaml file in edX format (people.yaml) and converts it to a format that is parsable by GrimoireLabs.
 ### entrypoint.sh ###
 Script run in docker container when docker run command is issued. Runs many of the scripts listed above to set up config files before starting SirMordred.
+
 ## Heroku ##
 Heroku integrates seamlessly with Docker to allow a user to push containers to a Heroku app. The process/container that runs SirMordred is hosted in a worker dyno on the openedx-metrics Heroku app. To check the logs of the openedx-metrics app use the command:
 
 ```heroku logs -a openedx-metrics --tail```
+
+It is also good to note that when looking at the logs you will see errors that look like this:
+
+Max retries error for GitHub
+![GitHub Error Message](https://github.com/openedx/metrics-dashboard/blob/master/images/github_error.png?s=200)
+
+Fetch members failed error for Slack
+![Slack Error Message](https://github.com/openedx/metrics-dashboard/blob/master/images/slack_error.png?s=200)
+
+These errors are normal, so do not worry! The program will continue to run as expected.
 
 ### Add-Ons (MariaDB and Elasticsearch) ###
 There are two Heroku add-ons for the metrics dashboard project. One is a MariaDB add-on, while the other is an Elasticsearch add-on. Although the metrics dashboard project itself is hosted on Heroku, both of these add-ons are hosted on AWS and maintained by third parties. If any issues with the metrics dashboard should arise, checking the status of the add-ons is a good place to start after checking the logs of the app. To check the status of the apps, you can visit the individual settings pages by going to the [resources tab](https://dashboard.heroku.com/apps/openedx-metrics/resources) of the Heroku app, and then clicking on each of the add-on links. 
@@ -146,6 +157,8 @@ enriched_index = discourse_grimoirelab
 
 Details of what is needed in the section will be in the Perceval documentation for the data source.
 
+Under the [phases] section of dashboard.cfg, you must also change panels to true, to ensure that the new indices for your section will be added. 
+
 The other file that must be changed is projects.json, which outlines all URLs to collect data from. To add another data source, simply add another key in the dictionary specified by the value of “Open edX” similar to the current layout of the “git” or “slack” keys.
 
 ### How to Upload Changes to Heroku ###
@@ -162,6 +175,10 @@ heroku container:release worker -a openedx-metrics
 ```
 
 After running the commands, make sure to import the previous dashboards you had saved using [manage-dashboards.py](https://github.com/openedx/metrics-dashboard#building-dockerfile)'s import functionality, so that you can keep any changes you made to the dashboards previous to releasing the application.
+
+### Restore Dashboard Settings ###
+After letting the new configuration settings run for a day, we now need to reset some of the changes in dashboard.cfg to prevent the container from rewriting panels every time it is started. In order to do this, under the [phases] section of dashboard.cfg, we want to change panels back to false. Push these changes to Github, rebuild the container, and push to Heroku again (the same steps outlined in the section above).
+
 
 ### Additional Information ###
 While you may think that adding a new section is straight forward, you may run into various unexpected requirements for how new sections should be added into the projects.json file. For example, when adding a new Slack section, the channels must be listed by their channel identifier alone, not in a URL, while the Git and Github sections both require URLs. The repository for [Perceval](https://github.com/chaoss/grimoirelab-perceval) has some information on how to format new sources of data, should you need it.
