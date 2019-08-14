@@ -30,7 +30,7 @@ In addition to providing the software for GrimoireLab, Bitergia also maintains s
 
 ### Building Dockerfile ###
 
-Should changes be made to the Dockerfile itself or to files in the GitHub repository, the Dockerfile will need to be rebuilt and pushed to Heroku. 
+Should changes be made to the Dockerfile itself or to files in the GitHub repository, those files will need to be pushed to GitHub, and the Dockerfile will need to be rebuilt and pushed to Heroku. 
 
 **Please note: if the changes you are making include adding a new section to Kibana, please go to [Adding a New Section to Kibana](https://github.com/openedx/metrics-dashboard#adding-a-new-section-to-kibana) before rebuilding the image.**
 
