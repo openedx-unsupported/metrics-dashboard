@@ -16,8 +16,5 @@ echo "Loading identities . . . "
 
 sleep 5
 
+echo "Starting SirMordred"
 /usr/local/bin/sirmordred -c /infra.cfg /dashboard.cfg /project.cfg /override.cfg
-echo "sirmordred started!!! :)"
-
-/usr/bin/python3 manage-dashboards.py import
-echo "dashboard imported!"
