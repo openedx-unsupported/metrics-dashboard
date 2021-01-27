@@ -16,7 +16,7 @@ def get_tokens(argv):
 	db_name = argv[6] #os.environ['DB_NAME']
 	elastic_url = argv[7] #os.environ['ELASTIC_URL']
 	kibana_url = argv[8] #os.environ['KIBANA_URL']
-        discourse = argv[9] #os.environ['DISCOURSE_KEY'] 
+	discourse = argv[9] #os.environ['DISCOURSE_KEY'] 
 
 	return {
 			"github": github, 
@@ -50,8 +50,8 @@ def write_config(tokens):
 	token_config.set('github', 'api-token', tokens['github'])
 	token_config.add_section('slack')
 	token_config.set('slack', 'api-token', tokens['slack'])
-        token_config.add_section('discourse')
-        token_config.set('discourse', 'api-token', tokens['discourse'])
+ 	token_config.add_section('discourse')
+ 	token_config.set('discourse', 'api-token', tokens['discourse'])
 
 	with open('override.cfg', 'w') as configfile:
 		token_config.write(configfile)
