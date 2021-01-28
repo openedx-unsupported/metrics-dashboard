@@ -40,6 +40,9 @@
 		"CC4GBRA4X", 
 		"CDAG4KN2C", 
 		"C02SNA1U4"
-	]
-	}
+	],
+	"discourse": [
+	    "https://discuss.openedx.org"
+        ]
+    }
 }
