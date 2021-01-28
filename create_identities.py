@@ -14,11 +14,11 @@ with open('people.yaml', 'r') as stream:
         #for each entry in the old yaml file
         for key in old_yaml:
             entry = {
-                        'profile': {'name': ''}, 
-                        'enrollments': [],
-                        'email': [],
-                        'github': []
-                    }
+                'profile': {'name': ''},
+                'enrollments': [],
+                'email': [],
+                'github': []
+            }
 
             #PROFILE/NAME
             entry['profile']['name'] = old_yaml[key]['name']
@@ -52,7 +52,7 @@ with open('people.yaml', 'r') as stream:
 
                 #if the current agreement is not none
                 if old_yaml[key]['agreement'] != 'none':
-                    entry['enrollments'].append({'organization': get_organization(old_yaml[key]), 
+                    entry['enrollments'].append({'organization': get_organization(old_yaml[key]),
                                                  'start': start_date})
 
             #if there is only one institution listed
@@ -66,16 +66,15 @@ with open('people.yaml', 'r') as stream:
             if 'other_emails' in old_yaml[key]:
                 for email in old_yaml[key]['other_emails']:
                     entry['email'].append(email)
-  
+
             #GITHUB
             entry['github'].append(key)
 
             # add the new entry to the new yaml file
             data.append(entry)
-        
+
         with open('identities.yaml', 'w') as outfile:
             yaml.dump(data, outfile, default_flow_style=False)
-            
+
     except yaml.YAMLError as exc:
         print(exc)
-
