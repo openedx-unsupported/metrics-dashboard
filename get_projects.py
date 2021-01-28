@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-""" 
+"""
 Gets all of the repos/channels for a grimoirelabs project
 """
 import os
@@ -43,11 +43,11 @@ def get_slack_channels(token):
 if __name__ == '__main__':
 
     '''
-    Test 1: Tests automatically filling the values for the 
+    Test 1: Tests automatically filling the values for the
             project for both a github organization and a slack workspace.
 
-            Passes when length of projects for slack is equivalent to number of 
-            channels and length of projects for github is equivalent to the 
+            Passes when length of projects for slack is equivalent to number of
+            channels and length of projects for github is equivalent to the
             number of public repos for a github organization.
     '''
     projects1 = {
@@ -72,11 +72,11 @@ if __name__ == '__main__':
         print(len(projects1['Open edX']['slack']))
 
     '''
-    Test 2: Tests automatically filling the values for the 
+    Test 2: Tests automatically filling the values for the
             project for only a slack workspace.
 
-            Passes when length of projects for slack is equivalent to number of 
-            channels and length of projects for github is equivalent to the 
+            Passes when length of projects for slack is equivalent to number of
+            channels and length of projects for github is equivalent to the
             specified projects.
     '''
 
@@ -92,13 +92,13 @@ if __name__ == '__main__':
     if len(projects2['Open edX']['slack']) == 154 and len(projects2['Open edX']['github']) == 1:
         print('Test 2 Passed: Filling in projects for only Slack')
     else:
-        '''print('Test 2 failed:\n Length of slack:' 
-                + len(projects1['Open edX']['slack']) 
+        '''print('Test 2 failed:\n Length of slack:'
+                + len(projects1['Open edX']['slack'])
                 + '\nLength of github: ' + len(projects2['Open edX']['github']))''' #need to fix this
 
     '''
     Test 3: Tests that this fills in values for multiple projects within the same
-            dictionary. 
+            dictionary.
 
             Passes if length for each part (i.e. github, slack) of each project is
             correct (i.e. equal to the number of channels, number of public repositories,
@@ -120,9 +120,9 @@ if __name__ == '__main__':
         }
     }
     create_projects(projects3, config1)
-    if (len(projects3['Open edX']['slack']) == 154 and 
+    if (len(projects3['Open edX']['slack']) == 154 and
         len(projects3['Open edX']['github']) == 1 and
-        len(projects3['Test']['slack']) == 1 and 
+        len(projects3['Test']['slack']) == 1 and
         len(projects3['Test']['github']) == 3):
         print('Test 3 Passed: Testing multiple projects')
 

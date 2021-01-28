@@ -11,7 +11,7 @@ import re
 
 def export_dash():
     '''
-    exports all dashboards stored in the kibana index to the dashboards directory. 
+    exports all dashboards stored in the kibana index to the dashboards directory.
     Filenames will be configured based on dashboard titles.
     '''
     dashboards = search_dashboards(os.environ['ELASTIC_URL'], '.kibana')
@@ -46,7 +46,7 @@ def export_dash():
 
 def import_dash():
     '''
-    imports all dashboards stored in the dashboards directory to the kibana index. 
+    imports all dashboards stored in the dashboards directory to the kibana index.
     '''
     for file in os.listdir('dashboards'):
         if file.endswith((".json")):
@@ -56,7 +56,7 @@ def import_dash():
                 os.environ['KIBANA_URL'],
                 ('dashboards/%s' % file)
             )
-            
+
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
