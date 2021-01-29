@@ -5,7 +5,10 @@ def get_organization(info):
     if info['agreement'] == 'individual':
         return 'individual'
     else:
-        return info['institution']
+        if 'institution' in info:
+            return info['institution']
+        else:
+            return 'unexpected'
 
 with open('people.yaml', 'r') as stream:
     try:
@@ -36,12 +39,12 @@ with open('people.yaml', 'r') as stream:
                     to_process = old_yaml[key]['before'][end_date]
 
                     # if it is the first date and the agreement is not none
-                    if i == 0 and to_process['agreement'] != 'none':
+                    if i == 0 and 'agreement' in to_process and to_process['agreement'] != 'none':
                         # add it to the new yaml file
                         entry['enrollments'].append({'organization': get_organization(to_process),
                                                      'end': end_date})
                     # if it is a middle date and the agreement is not none
-                    elif to_process['agreement'] != 'none':
+                    elif 'agreement' in to_process and to_process['agreement'] != 'none':
                         # add this to the new yaml file
                         entry['enrollments'].append({'organization': get_organization(to_process),
                                                      'start': start_date,
