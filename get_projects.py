@@ -11,6 +11,7 @@ from slackclient import SlackClient
 def create_projects(projects, config):
     git_token = config['github']['api-token']
     slack_token = config['slack']['api-token']
+    discourse_token = config['discourse']['api-token']
 
     for key in projects:
         if 'git' in projects[key] and 'http' not in projects[key]['git'][0]:
@@ -55,12 +56,14 @@ if __name__ == '__main__':
             "git": [ "edx"],
             "github": [],
             "github:repo": [],
-            "slack": []
+            "slack": [],
+            "discourse": []
         }
     }
     config1 = {
         'github' : {'api-token' : os.environ['GITHUB_KEY']}, #use correct tokens here
-        'slack' : {'api-token' : os.environ['SLACK_KEY']}
+        'slack' : {'api-token' : os.environ['SLACK_KEY']},
+        'discourse' : {'api-token' : os.environ['DISCOURSE_KEY']}
     }
 
     create_projects(projects1, config1)
