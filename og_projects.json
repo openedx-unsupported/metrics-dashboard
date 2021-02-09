@@ -1,13 +1,15 @@
 {
     "Open edX": {
-	    "git": [ 
-        	"edX"
-	    ],
-	    "github": [
-	    ],
-	    "github:repo": [
-	    ],
-	    "slack": [ 
-	    ]
+	"git": [ 
+            "edX"
+	],
+	"github": [
+	],
+	"github:repo": [
+	],
+	"slack": [ 
+	],
+	"discourse": [
+	]
     }
 }
