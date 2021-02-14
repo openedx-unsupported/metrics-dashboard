@@ -1,3 +1,4 @@
+set_env.sh
 credentials.cfg
 logs/all.log
 override.cfg
@@ -8,3 +9,5 @@ dashboards/.DS_STORE
 people.yaml
 result.yaml
 identities.yaml
+#*
+*~
