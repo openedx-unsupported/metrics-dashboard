@@ -1,0 +1,67 @@
+// This file matches entities and enriches them with extra data that
+// can subsequently be used for filtering.
+//
+// In setup.cfg we specify which source the "study" applies to
+//
+// [github:repo]
+// raw_index = github-raw
+// ...
+// studies = [enrich_extra_data:github]
+//
+// The "study" itself is defined as follows
+//
+// [enrich_extra_data:github]
+// json_url = https://gist.githubusercontent.com/e0d/88669434afa55953b0d99ed04402ee46/raw/d73fb06c73e5b3f53381145eeea4772fa9073bac/json
+//
+// Currently this file is loaded by requests, so file URLs won't work without further upstream changes
+//
+// https://github.com/chaoss/grimoirelab-elk/blob/aa72b2c2f8707becc4e07853c883fe4c3b28eeae/grimoire_elk/enriched/enrich.py#L1070
+//
+// Details about how the conditions are applied, etc. also available in code comments
+//
+[
+    {
+        "conditions": [
+            {
+                "field": "origin",
+                "value": "https://github.com/edx/edx-platform"
+            }
+        ],
+        "set_extra_fields": [
+            {
+                "field": "rh_ownership_theme",
+                "value": "platform"
+            },
+            {
+                "field": "rh_ownership_squad",
+                "value": "tnl"
+            },
+            {
+                "field": "rh_ownership_priority",
+                "value": "high"
+            }	    
+        ]
+    },
+    {
+        "conditions": [
+            {
+                "field": "origin",
+                "value": "https://github.com/edx/frontend-app-profile"
+            }
+        ],
+        "set_extra_fields": [
+            {
+                "field": "rh_ownership_theme",
+                "value": "platform"
+            },
+            {
+                "field": "rh_ownership_squad",
+                "value": "tnl"
+            },
+            {
+                "field": "rh_ownership_priority",
+                "value": "low"
+            }	    
+        ]
+    }
+]
