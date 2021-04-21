@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Gets all of the repos/channels for a grimoirelabs project
 """
