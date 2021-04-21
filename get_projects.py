@@ -14,12 +14,17 @@ def create_projects(projects, config):
     discourse_token = config['discourse']['api-token']
 
     for key in projects:
-        if 'git' in projects[key] and 'http' not in projects[key]['git'][0]:
-            git_organization = projects[key]['git'][0]
-            git_repos = get_git_repos(git_organization, git_token)
+        if 'git' in projects[key] and 'http' not in projects[key]['git']:
+
+            git_repos = []
+            
+            for organization in projects[key]['git']:
+                git_repos.extend(get_git_repos(organization, git_token))
+                
             projects[key]['git'] = git_repos
             projects[key]['github'] = git_repos
             projects[key]['github:repo'] = git_repos
+            
         if 'slack' in projects[key] and projects[key]['slack'] == []:
             projects[key]['slack'] = get_slack_channels(slack_token)
         if 'discourse' in projects[key] and projects[key]['discourse'] == []:
@@ -28,8 +33,7 @@ def create_projects(projects, config):
 
 def get_git_repos(org, token):
     gh = github3.login(token = token)
-    #repos = gh.organization('edX').repositories('public')
-    repos = gh.organization('openedx').repositories('public')
+    repos = gh.organization(org).repositories('public')
     repo_list = []
     for repo in repos:
         if not repo.fork:
@@ -39,10 +43,8 @@ def get_git_repos(org, token):
 def get_slack_channels(token):
     client = WebClient(token=token)
     channels = client.conversations_list(exclude_archived=True)
-    #api_call("channels.list", exclude_archived=1)['channels']
     channel_list = []
     for channel in channels['channels']:
-        print(channel)
         channel_list.append(channel['id'])
     return channel_list
 

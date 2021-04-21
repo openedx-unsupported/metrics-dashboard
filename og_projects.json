@@ -1,7 +1,8 @@
 {
     "Open edX": {
 	"git": [ 
-            "edX"
+	    "edX",
+	    "openedx"
 	],
 	"github": [
 	],
