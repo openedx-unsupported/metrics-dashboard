@@ -7,6 +7,7 @@ import get_projects
 import os
 import configparser
 import argparse
+import warnings
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-r", "--readfile", dest="readfile", default="og_projects.json", help="Path of projects file to read from")
@@ -22,7 +23,7 @@ def initialize(writefile):
     if os.path.exists(writefile):
         os.remove(writefile)
     else:
-        raise ValueError("%s does not exist" % args.writefile)
+        warnings.warn("Not removing projects.json because it does not exist")
 
 def read_og_projects(filepath):
     '''
