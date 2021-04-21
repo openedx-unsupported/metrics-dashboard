@@ -22,11 +22,14 @@ def create_projects(projects, config):
             projects[key]['github:repo'] = git_repos
         if 'slack' in projects[key] and projects[key]['slack'] == []:
             projects[key]['slack'] = get_slack_channels(slack_token)
+        if 'discourse' in projects[key] and projects[key]['discourse'] == []:
+            projects[key]['discourse'] = ["https://discuss.openedx.org"]
     return projects
 
 def get_git_repos(org, token):
     gh = github3.login(token = token)
-    repos = gh.organization('edX').repositories('public')
+    #repos = gh.organization('edX').repositories('public')
+    repos = gh.organization('openedx').repositories('public')
     repo_list = []
     for repo in repos:
         if not repo.fork:
@@ -38,7 +41,8 @@ def get_slack_channels(token):
     channels = client.conversations_list(exclude_archived=True)
     #api_call("channels.list", exclude_archived=1)['channels']
     channel_list = []
-    for channel in channels:
+    for channel in channels['channels']:
+        print(channel)
         channel_list.append(channel['id'])
     return channel_list
 
