@@ -5,7 +5,7 @@ Gets all of the repos/channels for a grimoirelabs project
 import os
 import github3
 import json
-from slackclient import SlackClient
+from slack import WebClient
 
 
 def create_projects(projects, config):
@@ -34,8 +34,9 @@ def get_git_repos(org, token):
     return repo_list
 
 def get_slack_channels(token):
-    client = SlackClient(token)
-    channels = client.api_call("channels.list", exclude_archived=1)['channels']
+    client = WebClient(token=token)
+    channels = client.conversations_list(exclude_archived=True)
+    #api_call("channels.list", exclude_archived=1)['channels']
     channel_list = []
     for channel in channels:
         channel_list.append(channel['id'])

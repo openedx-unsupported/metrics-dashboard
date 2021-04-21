@@ -1,0 +1,3 @@
+kidash
+slackclient
+github3.py

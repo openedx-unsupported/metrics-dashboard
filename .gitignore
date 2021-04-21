@@ -1,3 +1,11 @@
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
 credentials.cfg
 logs/all.log
 override.cfg
