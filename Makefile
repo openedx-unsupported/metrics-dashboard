@@ -7,24 +7,28 @@ help:
 	@echo ""
 	@echo "These should be run from outside the container:"
 	@echo ""
-	@perl -nle'print $& if m{^[\.a-zA-Z_-]+:.*? # .*$$)' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.* # "); {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2)'
+	@perl -nle'print $& if m{^[\.a-zA-Z_-]+:.*? # .*$$}' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.* # "}; {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}'
 	@echo ""
 
 # grimoirelab Docker configuration
+GRIMOIRE_DOCKER_NAME_LOCAL?=grimoirelab-local
 GRIMOIRE_DOCKER_IMAGE_LOCAL?=grimoirelab/full
+GRIMOIRE_DOCKER_NAME_REMOTE?=grimoirelab-remote
 GRIMOIRE_DOCKER_IMAGE_REMOTE?=grimoirelab/installed
 GRIMOIRE_HOST?=0.0.0.0
 GRIMOIRE_PORT?=5601
 GRIMOIRE_DOCKER_ARGS?=--tty --detach
 
-GRIMOIRE_CONTAINER_ID_LOCAL:=$(shell docker ps -a -q --filter ancestor=$(GRIMOIRE_DOCKER_IMAGE_LOCAL))
-GRIMOIRE_CONTAINER_ID_REMOTE:=$(shell docker ps -a -q --filter ancestor=$(GRIMOIRE_DOCKER_IMAGE_REMOTE))
+GRIMOIRE_CONTAINER_ID_LOCAL:=$(shell docker ps -a -q --filter name=$(GRIMOIRE_DOCKER_NAME_LOCAL))
+GRIMOIRE_CONTAINER_ID_REMOTE:=$(shell docker ps -a -q --filter name=$(GRIMOIRE_DOCKER_NAME_REMOTE))
 
-# Run full grimoirelab container, with all services running locally
+# -----------------------------------------------------------------------
+# Local: run all services locally
 
-start: .setup  # Start grimoirelab/full container
+start: .setup  # Run full grimoirelab container, with all services running locally
 	docker run \
 		--publish $(GRIMOIRE_HOST):$(GRIMOIRE_PORT):$(GRIMOIRE_PORT) \
+        --name $(GRIMOIRE_DOCKER_NAME_LOCAL) \
 		--volume $(shell pwd)/dashboard.cfg:/dashboard.cfg \
 		--volume $(shell pwd)/project.cfg:/project.cfg \
 		--volume $(shell pwd)/aliases.json:/aliases.json \
@@ -36,28 +40,32 @@ start: .setup  # Start grimoirelab/full container
 		$(GRIMOIRE_DOCKER_IMAGE_LOCAL)
 
 shell: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_LOCAL)
-shell: .shell  # Open shell on the grimoirelab/full container
+shell: .shell  # Open shell on the grimoirelab-local container
+
+logs: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_LOCAL)
+logs: .logs  # View logs on the grimoirelab-local container
 
 pull: GRIMOIRE_DOCKER_IMAGE=$(GRIMOIRE_DOCKER_IMAGE_LOCAL)
-pull: .pull  # Update grimoirelab/full docker image
+pull: .pull  # Update grimoirelab-local docker image
 
 restart: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_LOCAL)
-restart: .restart # Restart grimoirelab/full container
+restart: .restart # Restart grimoirelab-local container
 
 stop: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_LOCAL)
-stop: .stop  # Stop grimoirelab/full container
+stop: .stop  # Stop grimoirelab-local container
 
 destroy: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_LOCAL)
-destroy: .destroy  # Delete grimoirelab/full container
+destroy: .destroy  # Delete grimoirelab-local container
 
-clean: destroy  # Delete grimoirelab/full container and remove all persistent elasticsearch data
+clean: destroy  # Delete grimoirelab-local container and remove all persistent elasticsearch data
 
 # -----------------------------------------------------------------------
 # Remote: Connect to remote databases
 
-start.remote: .setup  # Start grimoirelab container, connected to remote production databases.
+start.remote: .setup  # Run grimoirelab container, connected to remote production databases.
 	docker run \
 		--publish $(GRIMOIRE_HOST):$(GRIMOIRE_PORT):$(GRIMOIRE_PORT) \
+        --name $(GRIMOIRE_DOCKER_NAME_REMOTE) \
 		--volume $(shell pwd)/dashboard.cfg:/dashboard.cfg \
 		--volume $(shell pwd)/infra.cfg:/infra.cfg \
 		--volume $(shell pwd)/project.cfg:/project.cfg \
@@ -70,25 +78,31 @@ start.remote: .setup  # Start grimoirelab container, connected to remote product
 		$(GRIMOIRE_DOCKER_IMAGE_REMOTE)
 
 shell.remote: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_REMOTE)
-shell: .shell  # Open shell on the grimoirelab/installed container
+shell.remote: .shell  # Open shell on the grimoirelab-remote container
+
+logs.remote: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_REMOTE)
+logs.remote: .logs  # View logs on the grimoirelab-remote container
 
 pull.remote: GRIMOIRE_DOCKER_IMAGE=$(GRIMOIRE_DOCKER_IMAGE_REMOTE)
-pull: .pull  # Update grimoirelab/installed docker image
+pull.remote: .pull  # Update grimoirelab-remote docker image
 
 restart.remote: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_REMOTE)
-restart: .restart # Restart grimoirelab/installed container
+restart.remote: .restart # Restart grimoirelab-remote container
 
 stop.remote: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_REMOTE)
-stop: .stop  # Stop grimoirelab/installed container
+stop.remote: .stop  # Stop grimoirelab-remote container
 
 destroy.remote: GRIMOIRE_CONTAINER_ID=$(GRIMOIRE_CONTAINER_ID_REMOTE)
-destroy: .destroy  # Delete grimoirelab/installed container
+destroy.remote: .destroy  # Delete grimoirelab-remote container
 
 # ----------------------------------------------------------------
 # utilities
 
 .shell:
 	docker exec -it $(GRIMOIRE_CONTAINER_ID) env TERM=xterm /bin/bash
+
+.logs:
+	docker logs -f $(GRIMOIRE_CONTAINER_ID)
 
 .pull:
 	docker pull $(GRIMOIRE_DOCKER_IMAGE)

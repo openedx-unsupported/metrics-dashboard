@@ -69,8 +69,7 @@ Alternatively, if you want to run the container locally, but use local files to 
 1. Stop the production container on Heroku.
 1. Run `set_config.py` and `create_identities.py` to generate the `credentials.cfg` and `identities.yaml` files, respectively.
 1. Run `make start.remote` to run the docker container.
-
-   Watch `logs/all.log` to see the SirModred logs.
+1. Run `make logs.remote` to watch the container logs. Once Sir Mordred is running, you can also watch `logs/all.log`.
 1. Run `make help` to see the other `*.remote` commands.
 
 Although the container in this command is *grimoirelab/installed* as opposed to the *test_dockerfile* image used for the Heroku app, it essentially completes the same job, with the exception of not running the extra scripts that I have written.
@@ -83,10 +82,10 @@ You can run a full grimoirelab instance locally.
 
    Update it to provide a API tokens for the sources you want to import.
 1. Run `make start` to download and run the grimoirelabs docker image.
-1. Watch `logs/all.log` to see the SirModred logs.
-
-   Processing the sources in `devstack/projects-min.json` will take some time.
+1. Run `make logs.remote` to watch the container logs. Once Sir Mordred is running, you can also watch `logs/all.log`.
 1. Visit http://localhost:5601 to view the Grimoire dashboard.
+
+   Processing the sources in `devstack/projects-min.json` will take some time, but you can view incremental progress there.
 1. Run `make help` to see other commands.
 
 Elasticsearch indexes are preserved under `es-data/nodes`, so you may need to manually re-index or re-create the data if major changes are made.
