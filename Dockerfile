@@ -22,9 +22,10 @@ RUN git clone https://github.com/openedx/metrics-dashboard.git ../../metrics-das
 
 RUN pwd
 
-# remove grimoirelabs files that are unnecessary
+# replace default grimoirelabs config files with our files
 RUN rm ../../infra.cfg && \
 	rm ../../dashboard.cfg && \
+	rm ../../project.cfg && \
 	rm ../../aliases.json && \
 	rm ../../identities.yaml
 
@@ -37,6 +38,7 @@ RUN cp /metrics-dashboard/set_config.py ../.. && \
 	cp /metrics-dashboard/infra.cfg ../.. && \
 	cp /metrics-dashboard/aliases.json ../.. && \
 	cp /metrics-dashboard/dashboard.cfg ../.. && \
+	cp /metrics-dashboard/project.cfg ../.. && \
 	cp /metrics-dashboard/og_projects.json ../.. && \
 	cp /metrics-dashboard/create_dashboard.py ../.. && \
 	cp -a /metrics-dashboard/dashboards ../..
