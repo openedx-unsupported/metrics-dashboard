@@ -14,7 +14,7 @@ hatstall:
   environment:
     - DATABASE_DIR=/db/
     - ADMIN_USER=admin
-    - ADMIN_PASS=RN2mquQFt9Mp4vJYqRUfQugPU
+    - ADMIN_PASS=${HATSTALL_PASSWORD}
   ports:
     - 8000:80
   links:
