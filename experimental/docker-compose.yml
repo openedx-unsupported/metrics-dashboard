@@ -1,0 +1,72 @@
+mordred:
+  image: bitergia/mordred:latest
+  volumes:
+    - ./grimoire-config/:/home/bitergia/conf
+    - ./grimoire-logs/:/tmp
+  environment: []
+  links:
+    - mariadb
+    - elasticsearch
+    - kibiter
+
+hatstall:
+  image: grimoirelab/hatstall:latest
+  environment:
+    - DATABASE_DIR=/db/
+    - ADMIN_USER=admin
+    - ADMIN_PASS=RN2mquQFt9Mp4vJYqRUfQugPU
+  ports:
+    - 8000:80
+  links:
+    - mariadb
+  volumes:
+    -  ./grimoire-config/apache-hatstall.conf:/home/grimoirelab/apache-hatstall.conf
+    -  ./grimoire-config/shdb.cfg:/home/grimoirelab/shdb.cfg
+    
+mariadb:
+  restart: "always"
+  image: mariadb:10.0
+  expose:
+    - "3306"
+  ports:
+    - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    - MYSQL_ALLOW_EMPTY_PASSWORD=no
+
+elasticsearch:
+  restart: on-failure:5
+  image: bitergia/elasticsearch:6.8.6-secured
+  command: elasticsearch -Enetwork.bind_host=0.0.0.0 -Ehttp.max_content_length=2000mb
+  environment:
+    - ES_JAVA_OPTS=-Xms2g -Xmx2g
+    - ELASTIC_USERNAME=${ELASTIC_USERNAME}
+    - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    - xpack.security.enabled=${ELASTIC_SECURITY}
+    # Results in SSL issue
+    # WARNING - Something went wrong when adding an alias on
+    # https://elasticsearch:9200/github_repositories-enriched.
+    # Alias not set. 400 Client Error: Bad Request
+    # Probably can be ignored, want to be sure.
+    #- xpack.security.transport.ssl.enabled=true 
+  expose:
+    - "9200"
+  ports:
+    - "9200:9200"
+
+kibiter:
+  restart: on-failure:5
+  image: bitergia/kibiter:secured-v6.8.6-3
+  environment:
+    - ANONYMOUS_USER=true
+    - PROJECT_NAME=Development
+    - NODE_OPTIONS=--max-old-space-size=1000
+    - ELASTICSEARCH_URL=https://elasticsearch:9200
+    - ELASTICSEARCH_USERNAME=${ELASTIC_USERNAME}
+    - ELASTICSEARCH_USER=${ELASTIC_USERNAME}
+    - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
+  links:
+    - elasticsearch
+  ports:
+    - "5601:5601"
+
