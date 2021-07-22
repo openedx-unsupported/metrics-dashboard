@@ -6,8 +6,11 @@
 auto-save-list
 tramp
 .\#*
+*.swp
+*.swo
 credentials.cfg
 logs/all.log
+es-data/
 override.cfg
 .DS_Store
 __pycache__/
