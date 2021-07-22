@@ -1,0 +1,34 @@
+{
+    "Open edX": {
+	"git": [
+	    "https://github.com/edx/frontend-app-profile",
+	    "https://github.com/edx/blockstore",
+	    "https://github.com/edx/XBlock",
+	    "https://github.com/edx/configuration"
+	],
+	"github": [
+	    "https://github.com/edx/frontend-app-profile",
+	    "https://github.com/edx/blockstore",
+	    "https://github.com/edx/XBlock",
+	    "https://github.com/edx/configuration"
+	],
+	"github:repo": [
+	    "https://github.com/edx/frontend-app-profile",
+	    "https://github.com/edx/blockstore",
+	    "https://github.com/edx/XBlock",
+	    "https://github.com/edx/configuration"
+	],
+	"github:pull": [
+	    "https://github.com/edx/frontend-app-profile",
+	    "https://github.com/edx/blockstore",
+	    "https://github.com/edx/XBlock",
+	    "https://github.com/edx/configuration"
+	],
+	"slack": [
+	     "C02SNA1U4"
+	 ],
+	"discourse": [
+	    "https://discuss.openedx.org"
+	]
+    }
+}
