@@ -1,0 +1,13 @@
+# Update this file with the appropriate values for your environment
+# and rename to .env so docker-compose can expand the values and 
+# reference them from docker-compose.yml
+ELASTIC_SECURITY=true
+# There's some bug that's preventing the password from updating when compose
+# starts.  It's being passed in the environment correctly, but not 
+# updated on the ElasticSearch side.
+ELASTIC_PASSWORD=
+ELASTIC_USERNAME=
+MYSQL_ROOT_PASSWORD=
+
+HATSTALL_USER=
+HATSTALL_PASSWORD=
