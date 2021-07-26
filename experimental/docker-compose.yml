@@ -1,9 +1,14 @@
 mordred:
-  image: bitergia/mordred:latest
+  # This version was recommended in CHAOSS slack as it works with
+  # AWS's open source version of Elasticsearch
+  image: bitergia/mordred:grimoirelab-0.2.57
   volumes:
-    - ./grimoire-config/:/home/bitergia/conf
-    - ./grimoire-logs/:/tmp
-  environment: []
+    - ./setup.cfg:/home/bitergia/conf/setup.cfg
+    - ./credentials.cfg:/home/bitergia/conf/credentials.cfg
+    - ./simple-projects.json:/home/bitergia/conf/simple-projects.json
+    - ./aliases.json:/home/bitergia/conf/aliases.json
+  environment:
+    - MORDRED_CONF_FILES=conf/setup.cfg conf/credentials.cfg
   links:
     - mariadb
     - elasticsearch
@@ -13,7 +18,7 @@ hatstall:
   image: grimoirelab/hatstall:latest
   environment:
     - DATABASE_DIR=/db/
-    - ADMIN_USER=admin
+    - ADMIN_USER=${HATSTALL_USER}
     - ADMIN_PASS=${HATSTALL_PASSWORD}
   ports:
     - 8000:80
