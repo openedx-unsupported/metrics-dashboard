@@ -16,6 +16,8 @@ dashboards/.DS_STORE
 people.yaml
 result.yaml
 identities.yaml
+es-data/
+certs/
 
 ## vim
 ## https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
