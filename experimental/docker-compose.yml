@@ -3,12 +3,14 @@ mordred:
   # AWS's open source version of Elasticsearch
   image: bitergia/mordred:grimoirelab-0.2.57
   volumes:
-    - ./setup.cfg:/home/bitergia/conf/setup.cfg
-    - ./credentials.cfg:/home/bitergia/conf/credentials.cfg
-    - ./simple-projects.json:/home/bitergia/conf/simple-projects.json
-    - ./aliases.json:/home/bitergia/conf/aliases.json
+    - ./conf/setup.cfg:/home/bitergia/conf/setup.cfg
+    - ./conf/credentials.cfg:/home/bitergia/conf/credentials.cfg
+    - ../orgs.json:/home/bitergia/conf/orgs.json
+    - ./conf/simple-projects.json:/home/bitergia/conf/simple-projects.json
+    - ./conf/aliases.json:/home/bitergia/conf/aliases.json
+    - ./logs:/home/bitergia/logs
   environment:
-    - MORDRED_CONF_FILES=conf/setup.cfg conf/credentials.cfg
+    - MORDRED_CONF_FILES=/home/biturgia/conf/setup.cfg /home/biturgia/conf/credentials.cfg
   links:
     - mariadb
     - elasticsearch
@@ -25,9 +27,9 @@ hatstall:
   links:
     - mariadb
   volumes:
-    -  ./grimoire-config/apache-hatstall.conf:/home/grimoirelab/apache-hatstall.conf
-    -  ./grimoire-config/shdb.cfg:/home/grimoirelab/shdb.cfg
-    
+    -  ./conf/apache-hatstall.conf:/home/grimoirelab/apache-hatstall.conf
+    -  ./conf/credentials.cfg:/home/grimoirelab/shdb.cfg
+
 mariadb:
   restart: "always"
   image: mariadb:10.0
