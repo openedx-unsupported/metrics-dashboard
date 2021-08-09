@@ -13,6 +13,10 @@ help:
 # -----------------------------------------------------------------------------
 # local devstack
 
+requirements:
+	# python3.9 venv
+	pip install -r requirements.txt
+
 dev.up: .setup .up  # Start containers
 
 dev.down: .down  # Stop containers

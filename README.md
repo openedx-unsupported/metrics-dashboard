@@ -65,16 +65,17 @@ docker run --env DB_HOST --env DB_NAME --env DB_PASS && \
 
 You can run a full grimoirelab instance locally from the `experimental/` directory.
 
+1. Change directories to `experimental/`.
+1. Copy the `dot_env` file into `.env`.
+   Update it to provide credentials and URLs for the relevant services. 
 1. Copy the `credentials-example.cfg` file into `conf/credentials.cfg`.
 
-   Update it to provide a API tokens for the sources you want to import (see comments for details).
-1. Copy the `dot_env` file into `.env`.
-
-   Update it to provide credentials and URLs for the relevant services. 
+   Update it to provide credentials for the services and sources you want to import (see comments for details).
+1. Create and enable a python3 virtual environment, and run `make requirements`.
 1. Run `make dev.up` to download and run the docker containers.
 1. Run `make mordred.logs` to watch the mordred container logs.
 
-   Once Sir Mordred is running, you can also watch `logs/all.log` for data processing progress.
+   Once mordred is running, you can also watch `logs/all.log` for data processing progress.
 1. Visit http://localhost:5601 to view the Grimoire dashboard.
 
    Processing the sources in `conf/simple-projects.json` will take some time, but you can view incremental progress there.

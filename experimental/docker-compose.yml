@@ -1,16 +1,20 @@
+# The bitergia elasticsearch + kibiter "secured" images use the
+# SecureGuard plugin with its demo user credentials and certificates.
+# See https://docs.search-guard.com/latest/installation-windows
+
 mordred:
   # This version was recommended in CHAOSS slack as it works with
   # AWS's open source version of Elasticsearch
   image: bitergia/mordred:grimoirelab-0.2.57
   volumes:
-    - ./conf/setup.cfg:/home/bitergia/conf/setup.cfg
-    - ./conf/credentials.cfg:/home/bitergia/conf/credentials.cfg
-    - ../orgs.json:/home/bitergia/conf/orgs.json
-    - ./conf/simple-projects.json:/home/bitergia/conf/simple-projects.json
-    - ./conf/aliases.json:/home/bitergia/conf/aliases.json
-    - ./logs:/home/bitergia/logs
+    - ./conf/setup.cfg:${MORDRED_CONF}/setup.cfg
+    - ./conf/credentials.cfg:${MORDRED_CONF}/credentials.cfg
+    - ../orgs.json:${MORDRED_CONF}/orgs.json
+    - ./conf/simple-projects.json:${MORDRED_CONF}/simple-projects.json
+    - ./conf/aliases.json:${MORDRED_CONF}/aliases.json
+    - ./logs:${MORDRED_CONF}/logs
   environment:
-    - MORDRED_CONF_FILES=/home/biturgia/conf/setup.cfg /home/biturgia/conf/credentials.cfg
+    - MORDRED_CONF_FILES=${MORDRED_CONF}/setup.cfg ${MORDRED_CONF}/credentials.cfg
   links:
     - mariadb
     - elasticsearch
@@ -41,45 +45,15 @@ mariadb:
     - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     - MYSQL_ALLOW_EMPTY_PASSWORD=no
 
-create_certificates:
-  image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION}
-  command: >
-    bash -c '
-      # Generate certificates if needed
-      if [[ ! -f /certs/ca/ca.crt ]]; then
-        bin/elasticsearch-certutil cert --silent --pem \
-          --dns elasticsearch,localhost \
-          --ip 127.0.0.1 \
-          --out /certs/bundle.zip;
-        unzip /certs/bundle.zip -d /certs;
-      fi;
-      chown -R elasticsearch:0 /certs;
-    '
-  volumes:
-    - ./certs:/certs
-
+# SearchGuard default credentials are: admin / admin
 elasticsearch:
   restart: on-failure:5
-  image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION}
+  image: bitergia/elasticsearch:6.8.6-secured
   environment:
     - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
-    - ELASTIC_USERNAME=${ELASTIC_USERNAME}
-    - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
     - network.bind_host=0.0.0.0
     - http.max_content_length=2000mb
-    - xpack.security.enabled=true
-    - xpack.security.http.ssl.enabled=true
-    - xpack.security.http.ssl.verification_mode=certificate
-    - xpack.security.http.ssl.key=certs/instance/instance.key
-    - xpack.security.http.ssl.certificate_authorities=certs/ca/ca.crt
-    - xpack.security.http.ssl.certificate=certs/instance/instance.crt
-    - xpack.security.transport.ssl.enabled=true
-    - xpack.security.transport.ssl.verification_mode=certificate
-    - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
-    - xpack.security.transport.ssl.certificate=certs/instance/instance.crt
-    - xpack.security.transport.ssl.key=certs/instance/instance.key
   volumes:
-    - ./certs:/usr/share/elasticsearch/config/certs
     - ./es-data:/var/lib/elasticsearch
   ports:
     - "${ELASTIC_PORT}:9200"
@@ -88,19 +62,20 @@ elasticsearch:
 
 kibiter:
   restart: on-failure:5
+  # See https://github.com/chaoss/grimoirelab-kibiter/releases
   image: bitergia/kibiter:secured-v6.8.6-3
   environment:
-    - ANONYMOUS_USER=true
-    - PROJECT_NAME=Development
+    - ANONYMOUS_USER=false
+    - PROJECT_NAME=Kibiter
     - NODE_OPTIONS=--max-old-space-size=1000
     - ELASTICSEARCH_URL=https://elasticsearch:9200
-    - ELASTICSEARCH_USER=${ELASTIC_USERNAME}
-    - ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}
-    - elasticsearch.ssl.certificateAuthorities=config/certs/ca/ca.crt
-    - elasticsearch.ssl.verificationMode=certificate
+    # SearchGuard provides these credentials
+    - ELASTICSEARCH_USER=kibanaserver
+    - ELASTICSEARCH_PASSWORD=kibanaserver
+    - ELASTICSEARCH_SSL_VERIFICATIONMODE=none
+    - ELASTICSEARCH.REQUESTHEADERSWHITELIST='["Authorization", "sgtenant"]'
+    - XPACK_SECURITY_ENABLED=false
   links:
     - elasticsearch
   ports:
     - "${KIBANA_PORT}:5601"
-  volumes:
-    - ./certs:/usr/share/kibana/config/certs/:ro
