@@ -68,9 +68,6 @@ You can run a full grimoirelab instance locally from the `experimental/` directo
 1. Change directories to `experimental/`.
 1. Copy the `dot_env` file into `.env`.
    Update it to provide credentials and URLs for the relevant services. 
-1. Copy the `credentials-example.cfg` file into `conf/credentials.cfg`.
-
-   Update it to provide credentials for the services and sources you want to import (see comments for details).
 1. Create and enable a python3 virtual environment, and run `make requirements`.
 1. Run `make dev.up` to download and run the docker containers.
 1. Run `make mordred.logs` to watch the mordred container logs.

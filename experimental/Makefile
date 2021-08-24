@@ -14,7 +14,7 @@ help:
 # local devstack
 
 requirements:
-	# python3.9 venv
+	# run in a python3.9 venv
 	pip install -r requirements.txt
 
 dev.up: .setup .up  # Start containers
@@ -125,8 +125,25 @@ mariadb.destroy: .destroy  # Destroy the mariadb container
 .clean:
 	rm -rf $(shell pwd)/es-data/nodes
 
+# Fix permissions on log dir so mordred can write to it
 .fix-permissions:
-	# Fix permissions on log dir so mordred can write to it
 	chmod 777 $(shell pwd)/logs
 
-.setup: .fix-permissions
+# Export everything in .env to fill in the config file templates
+include .env
+.EXPORT_ALL_VARIABLES:
+
+.mordred-config:
+	envsubst < conf/credentials.cfg.template > conf/credentials.cfg
+
+# Elasticsearch passwords must be hashed in the SearchGuard config file
+.search-guard-config: ELASTIC_ADMIN_PASSWORD__HASH=$(shell python3 scripts/hash_password.py ${ELASTIC_ADMIN_PASSWORD})
+.search-guard-config: KIBANA_SERVER_PASSWORD__HASH=$(shell python3 scripts/hash_password.py ${KIBANA_SERVER_PASSWORD})
+.search-guard-config: KIBANA_READER_PASSWORD__HASH=$(shell python3 scripts/hash_password.py ${KIBANA_READER_PASSWORD})
+.search-guard-config: KIBANA_PASSWORD__HASH=$(shell python3 scripts/hash_password.py ${KIBANA_PASSWORD})
+.search-guard-config:
+	envsubst < conf/sg_internal_users.yml.template > conf/sg_internal_users.yml
+
+.config-files: .mordred-config .search-guard-config
+
+.setup: .fix-permissions .config-files

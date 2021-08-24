@@ -1,0 +1,23 @@
+# This is the internal user database
+# The hash value is a bcrypt hash and can be generated with plugin/tools/hash.sh
+
+${ELASTIC_ADMIN_USER}:
+  hash: ${ELASTIC_ADMIN_PASSWORD__HASH}
+  roles:
+    - admin
+
+${KIBANA_SERVER_USER}:
+  hash: ${KIBANA_SERVER_PASSWORD__HASH}
+
+${KIBANA_READER_USER}:
+  readonly: true
+  hash: ${KIBANA_READER_PASSWORD__HASH}
+  roles:
+    - kibanauser
+    - readall
+
+${KIBANA_USER}:
+  hash: ${KIBANA_PASSWORD__HASH}
+  roles:
+    - kibanauser
+    - readall

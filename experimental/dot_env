@@ -1,15 +1,40 @@
-# Update this file with the appropriate values for your environment
-# and rename to .env so docker-compose can expand the values and 
-# reference them from docker-compose.yml
+# Rename to .env and update with the appropriate values for your environment so
+# they can be referenced from docker-compose.yml
 ELASTIC_PORT=9200
+ELASTIC_ADMIN_USER=
+ELASTIC_ADMIN_PASSWORD=
 
-MYSQL_ROOT_PASSWORD=
 MYSQL_PORT=3306
+MYSQL_ROOT_USER=
+MYSQL_ROOT_PASSWORD=
 
+HATSTALL_PORT=8000
 HATSTALL_USER=
 HATSTALL_PASSWORD=
-HATSTALL_PORT=8000
 
 KIBANA_PORT=5601
+# WARNING: don't change these usernames, they're critical for some reason.
+KIBANA_SERVER_USER=kibanaserver
+KIBANA_SERVER_PASSWORD=
+KIBANA_READER_USER=kibanaro
+KIBANA_READER_PASSWORD=
+
+# Credentials for accessing the Kibana/Kibiter UI; can be whatever you want.
+KIBANA_USER=
+KIBANA_PASSWORD=
 
 MORDRED_CONF=/home/bitergia/conf
+
+# See https://github.blog/2013-05-16-personal-api-tokens/
+MORDRED_GITHUB_API_TOKEN=
+
+# Provide username and token: https://meta.discourse.org/t/user-api-keys-specification/48536
+# FIXME: Seems to require Discourse admins authorizing an app so users can
+# provide a public key when requesting their token.
+MORDRED_DISCOURSE_API_USERNAME=
+MORDRED_DISCOURSE_API_TOKEN=
+
+# Legacy token: https://api.slack.com/legacy/custom-integrations/legacy-tokens
+# FIXME: Slack cannot create new legacy tokens, so hopefully someone (us?) will
+# fix sortinghat to use the new authentication.
+MORDRED_SLACK_API_TOKEN=
