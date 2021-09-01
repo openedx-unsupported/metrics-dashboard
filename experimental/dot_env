@@ -1,8 +1,6 @@
 # Rename to .env and update with the appropriate values for your environment so
 # they can be referenced from docker-compose.yml
 ELASTIC_PORT=9200
-ELASTIC_ADMIN_USER=
-ELASTIC_ADMIN_PASSWORD=
 
 MYSQL_PORT=3306
 MYSQL_ROOT_USER=
@@ -13,15 +11,6 @@ HATSTALL_USER=
 HATSTALL_PASSWORD=
 
 KIBANA_PORT=5601
-# WARNING: don't change these usernames, they're critical for some reason.
-KIBANA_SERVER_USER=kibanaserver
-KIBANA_SERVER_PASSWORD=
-KIBANA_READER_USER=kibanaro
-KIBANA_READER_PASSWORD=
-
-# Credentials for accessing the Kibana/Kibiter UI; can be whatever you want.
-KIBANA_USER=
-KIBANA_PASSWORD=
 
 MORDRED_CONF=/home/bitergia/conf
 

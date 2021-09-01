@@ -47,33 +47,25 @@ mariadb:
 
 elasticsearch:
   restart: on-failure:5
-  image: bitergia/elasticsearch:6.8.6-secured
+  image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6
   environment:
     - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
     - network.bind_host=0.0.0.0
     - http.max_content_length=2000mb
+    - ANONYMOUS_USER=true
   volumes:
     - ./es-data:/var/lib/elasticsearch
-    - ./conf/sg_internal_users.yml:/elasticsearch/plugins/search-guard-6/sgconfig/sg_internal_users.yml
   ports:
     - "${ELASTIC_PORT}:9200"
-  expose:
-    - "${ELASTIC_PORT}"
 
 kibiter:
   restart: on-failure:5
   # See https://github.com/chaoss/grimoirelab-kibiter/releases
-  image: bitergia/kibiter:secured-v6.8.6-3
+  image: bitergia/kibiter:community-v6.8.6-3
   environment:
-    - ANONYMOUS_USER=false
     - PROJECT_NAME=Kibiter
     - NODE_OPTIONS=--max-old-space-size=1000
-    - ELASTICSEARCH_URL=https://elasticsearch:9200
-    - ELASTICSEARCH_USER=${KIBANA_SERVER_USER}
-    - ELASTICSEARCH_PASSWORD=${KIBANA_SERVER_PASSWORD}
-    - ELASTICSEARCH_SSL_VERIFICATIONMODE=none
-    - ELASTICSEARCH.REQUESTHEADERSWHITELIST='["Authorization", "sgtenant"]'
-    - XPACK_SECURITY_ENABLED=false
+    - ELASTICSEARCH_URL=http://elasticsearch:9200
   links:
     - elasticsearch
   ports:

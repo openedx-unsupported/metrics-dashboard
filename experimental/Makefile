@@ -136,14 +136,6 @@ include .env
 .mordred-config:
 	envsubst < conf/credentials.cfg.template > conf/credentials.cfg
 
-# Elasticsearch passwords must be hashed in the SearchGuard config file
-.search-guard-config: ELASTIC_ADMIN_PASSWORD__HASH=$(shell python3 scripts/hash_password.py ${ELASTIC_ADMIN_PASSWORD})
-.search-guard-config: KIBANA_SERVER_PASSWORD__HASH=$(shell python3 scripts/hash_password.py ${KIBANA_SERVER_PASSWORD})
-.search-guard-config: KIBANA_READER_PASSWORD__HASH=$(shell python3 scripts/hash_password.py ${KIBANA_READER_PASSWORD})
-.search-guard-config: KIBANA_PASSWORD__HASH=$(shell python3 scripts/hash_password.py ${KIBANA_PASSWORD})
-.search-guard-config:
-	envsubst < conf/sg_internal_users.yml.template > conf/sg_internal_users.yml
-
-.config-files: .mordred-config .search-guard-config
+.config-files: .mordred-config
 
 .setup: .fix-permissions .config-files
