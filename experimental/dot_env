@@ -3,10 +3,14 @@
 ELASTIC_PORT=9200
 
 MYSQL_PORT=3306
+# NOTE: The MariaDB container will create this user with this password in your local environment when bringing up the
+# container for the first time. This is not something you need to find or configure elsewhere.
 MYSQL_ROOT_USER=
 MYSQL_ROOT_PASSWORD=
 
 HATSTALL_PORT=8000
+# NOTE: The Hatstall container will create this user with this password in your local environment when bringing up the
+# container for the first time. This is not something you need to find or configure elsewhere.
 HATSTALL_USER=
 HATSTALL_PASSWORD=
 

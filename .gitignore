@@ -41,3 +41,9 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+
+# Pyenv
+[.]python-version
+
+# IntelliJ/JetBrains IDEs
+[.]idea/*
