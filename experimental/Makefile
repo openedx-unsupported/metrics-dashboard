@@ -17,7 +17,7 @@ requirements:
 	# run in a python3.9 venv
 	pip install -r requirements.txt
 
-dev.up: .setup .up  # Start containers
+dev.up: .up  # Start containers
 
 dev.down: .down  # Stop containers
 
@@ -134,8 +134,9 @@ include .env
 .EXPORT_ALL_VARIABLES:
 
 .mordred-config:
-	envsubst < conf/credentials.cfg.template > conf/credentials.cfg
+	mkdir -p conf/dashboard-secrets
+	envsubst < conf/credentials.cfg.template > conf/dashboard-secrets/credentials.cfg
 
 .config-files: .mordred-config
 
-.setup: .fix-permissions .config-files
+setup: .fix-permissions .config-files

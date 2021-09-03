@@ -51,25 +51,17 @@ To push to Heroku, go to [How to Upload Changes to Heroku](https://github.com/op
 
 You can run a full instance of Grimoire locally, or, if you have the credentials, you can debug the production instance by connecting to the same elasticsearch and Maria instances as Heroku.
 
-#### Debug remote instance
-
-If you want to run the project on your local computer as opposed to on Heroku, use this command **after stopping the container running on Heroku**:
-
-```
-docker run --env DB_HOST --env DB_NAME --env DB_PASS && \
---env DB_USER --env ELASTIC_URL --env GITHUB_KEY && \
---env KIBANA_URL --env SLACK_KEY test_dockerfile
-```
-
-#### Run local instance
+#### Running the project
 
 You can run a full grimoirelab instance locally from the `experimental/` directory.
 
 1. Change directories to `experimental/`.
-2. Copy the `dot_env` file into `.env`.
-   Update it to provide credentials and URLs for the relevant services.
-3. Create and enable a python3 virtual environment, and run `make requirements`.
-4. (Linux) If you have not already done so, run `sysctl -w vm.max_map_count=262144` (temporary) or add `vm.max_map_count = 262144` to `/etc/sysctl.conf` on the host machine and reboot.
+2Create and enable a python3 virtual environment, and run `make requirements`.
+2. (Linux) If you have not already done so, run `sysctl -w vm.max_map_count=262144` (temporary) or add `vm.max_map_count = 262144` to `/etc/sysctl.conf` on the host machine and reboot.
+3. Either:
+   * Clone the secrets repository into the `conf` subdirectory to make `conf/dashboard-secrets`. This will allow you to debug the production instance.
+   * OR: Copy the `dot_env` file into `.env` and update it to provide credentials and URLs for the relevant services. Then run `make setup` to generate development secrets. Do this whenever you update the secrets to regenerate the configuration.
+4. If debugging the remote copy on Heroku, **stop the container on production**.
 5. Run `make dev.up` to download and run the docker containers.
 6. Run `make mordred.logs` to watch the mordred container logs.
 

@@ -7,6 +7,7 @@ tramp
 .\#*
 .env
 credentials.cfg
+experimental/conf/dashboard-secrets/**
 sg_internal_users.yml
 all.log
 override.cfg
