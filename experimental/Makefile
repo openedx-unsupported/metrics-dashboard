@@ -19,9 +19,11 @@ requirements:
 
 dev.up: .up  # Start containers
 
-dev.down: .down  # Stop containers
+dev.stop: .stop # Stop containers
 
-dev.clean: .down .clean  # Stop containers and remove all persistent data
+dev.down: .down  # Destroy containers
+
+dev.clean: .down .clean  # Destroy containers and remove all persistent data
 
 # -----------------------------------------------------------------------------
 # sir mordred
@@ -117,7 +119,11 @@ mariadb.destroy: .destroy  # Destroy the mariadb container
 	docker restart $(CONTAINER_ID)
 
 .stop:
-	docker stop $(CONTAINER_ID)
+	if [ -z "${CONTAINER_ID}" ]; then \
+  		docker-compose stop ; \
+  	else \
+		docker stop $(CONTAINER_ID) ; \
+	fi
 
 .destroy: .stop
 	docker rm $(CONTAINER_ID)

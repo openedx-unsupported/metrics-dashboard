@@ -8,7 +8,7 @@ mordred:
   image: bitergia/mordred:grimoirelab-0.2.57
   volumes:
     - ./conf/setup.cfg:${MORDRED_CONF}/setup.cfg
-    - ./conf/credentials.cfg:${MORDRED_CONF}/credentials.cfg
+    - ./conf/dashboard-secrets/credentials.cfg:${MORDRED_CONF}/credentials.cfg
     - ../orgs.json:${MORDRED_CONF}/orgs.json
     - ./conf/simple-projects.json:${MORDRED_CONF}/simple-projects.json
     - ./conf/aliases.json:${MORDRED_CONF}/aliases.json
@@ -32,7 +32,7 @@ hatstall:
     - mariadb
   volumes:
     -  ./conf/apache-hatstall.conf:/home/grimoirelab/apache-hatstall.conf
-    -  ./conf/credentials.cfg:/home/grimoirelab/shdb.cfg
+    -  ./conf/dashboard-secrets/credentials.cfg:/home/grimoirelab/shdb.cfg
 
 mariadb:
   restart: "always"
