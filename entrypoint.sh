@@ -12,7 +12,7 @@ sleep 5
 echo "projects.json is . . . "
 cat /projects.json
 
-git clone https://$GITHUB_KEY@github.com/edx/repo-tools-data.git
+git clone https://$GITHUB_KEY@github.com/openedx/repo-tools-data.git
 cp repo-tools-data/people.yaml .
 rm -rf repo-tools-data
 echo "Loading identities . . . "
